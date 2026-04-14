@@ -26,6 +26,7 @@ try:
         validate_project_structure,
         validate_svg_viewbox,
     )
+    from i18n import t
 except ImportError:
     tools_dir = Path(__file__).resolve().parent
     if str(tools_dir) not in sys.path:
@@ -37,6 +38,7 @@ except ImportError:
         validate_project_structure,
         validate_svg_viewbox,
     )
+    from i18n import t  # type: ignore
 
 TOOLS_DIR = Path(__file__).resolve().parent
 SKILL_DIR = TOOLS_DIR.parent
@@ -151,8 +153,8 @@ class ProjectManager:
             encoding="utf-8",
         )
 
-        print(f"Project created: {project_path}")
-        print(f"Canvas: {canvas_info['name']} ({canvas_info['dimensions']})")
+        print(t("project.created", path=str(project_path)))
+        print(t("project.canvas", name=canvas_info['name'], dimensions=canvas_info['dimensions']))
         return str(project_path)
 
     def _source_dir(self, project_path: Path) -> Path:
@@ -623,35 +625,35 @@ def main() -> None:
         if command == "init":
             project_name, canvas_format, base_dir = parse_init_args(sys.argv)
             project_path = manager.init_project(project_name, canvas_format, base_dir=base_dir)
-            print(f"[OK] Project initialized: {project_path}")
-            print("Next:")
-            print("1. Put source files into sources/ (or use import-sources)")
-            print("2. Save your design spec to the project root")
-            print("3. Generate SVG files into svg_output/")
+            print(t("project.init_ok", path=str(project_path)))
+            print(t("project.next_header"))
+            print(t("project.next_1"))
+            print(t("project.next_2"))
+            print(t("project.next_3"))
             return
 
         if command == "import-sources":
             project_path, sources, move, copy = parse_import_args(sys.argv)
             summary = manager.import_sources(project_path, sources, move=move, copy=copy)
-            print(f"[OK] Imported sources into: {project_path}")
+            print(t("project.imported_header", path=str(project_path)))
             if summary["archived"]:
-                print("\nArchived originals / URL records:")
+                print("\n" + t("project.archived_header"))
                 for item in summary["archived"]:
                     print(f"  - {item}")
             if summary["markdown"]:
-                print("\nNormalized markdown:")
+                print("\n" + t("project.normalized_header"))
                 for item in summary["markdown"]:
                     print(f"  - {item}")
             if summary["assets"]:
-                print("\nImported asset directories:")
+                print("\n" + t("project.assets_header"))
                 for item in summary["assets"]:
                     print(f"  - {item}")
             if summary["notes"]:
-                print("\nNotes:")
+                print("\n" + t("project.notes_header"))
                 for item in summary["notes"]:
                     print(f"  - {item}")
             if summary["skipped"]:
-                print("\nSkipped:")
+                print("\n" + t("project.skipped_header"))
                 for item in summary["skipped"]:
                     print(f"  - {item}")
             return
@@ -663,25 +665,25 @@ def main() -> None:
             project_path = sys.argv[2]
             is_valid, errors, warnings = manager.validate_project(project_path)
 
-            print(f"\nProject validation: {project_path}")
+            print("\n" + t("project.validate_header", path=project_path))
             print("=" * 60)
 
             if errors:
-                print("\n[ERROR]")
+                print("\n" + t("project.errors_header"))
                 for error in errors:
                     print(f"  - {error}")
 
             if warnings:
-                print("\n[WARN]")
+                print("\n" + t("project.warnings_header"))
                 for warning in warnings:
                     print(f"  - {warning}")
 
             if is_valid and not warnings:
-                print("\n[OK] Project structure is complete.")
+                print("\n" + t("project.valid_ok"))
             elif is_valid:
-                print("\n[OK] Project structure is valid, with warnings.")
+                print("\n" + t("project.valid_with_warnings"))
             else:
-                print("\n[ERROR] Project structure is invalid.")
+                print("\n" + t("project.invalid"))
                 sys.exit(1)
             return
 
@@ -692,16 +694,18 @@ def main() -> None:
             project_path = sys.argv[2]
             info = manager.get_project_info(project_path)
 
-            print(f"\nProject info: {info['name']}")
+            yes_s = t("project.yes")
+            no_s = t("project.no")
+            print("\n" + t("project.info_header", name=info['name']))
             print("=" * 60)
-            print(f"Path: {info['path']}")
-            print(f"Exists: {'Yes' if info['exists'] else 'No'}")
-            print(f"SVG files: {info['svg_count']}")
-            print(f"Design spec: {'Yes' if info['has_spec'] else 'No'}")
-            print(f"Source materials: {'Yes' if info['has_source'] else 'No'}")
-            print(f"Source count: {info['source_count']}")
-            print(f"Canvas format: {info['canvas_format']}")
-            print(f"Created: {info['create_date']}")
+            print(t("project.info_path", value=info['path']))
+            print(t("project.info_exists", value=yes_s if info['exists'] else no_s))
+            print(t("project.info_svg_count", value=info['svg_count']))
+            print(t("project.info_spec", value=yes_s if info['has_spec'] else no_s))
+            print(t("project.info_source", value=yes_s if info['has_source'] else no_s))
+            print(t("project.info_source_count", value=info['source_count']))
+            print(t("project.info_canvas", value=info['canvas_format']))
+            print(t("project.info_created", value=info['create_date']))
             return
 
         raise ValueError(f"Unknown command: {command}")

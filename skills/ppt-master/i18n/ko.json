@@ -1,0 +1,47 @@
+{
+  "settings": {
+    "header": "PPT Master — 설정",
+    "file": "설정 파일:        {path}",
+    "stored_language": "저장된 언어:     {value}",
+    "active_language": "현재 적용 언어:  {value}",
+    "other_keys": "기타 설정값:",
+    "language_updated": "언어 설정이 저장되었습니다: {value}"
+  },
+  "project": {
+    "created": "프로젝트가 생성되었습니다: {path}",
+    "canvas": "캔버스: {name} ({dimensions})",
+    "init_ok": "[완료] 프로젝트 초기화됨: {path}",
+    "next_header": "다음 단계:",
+    "next_1": "1. sources/ 디렉터리에 원본 파일을 넣거나 import-sources 명령을 사용하세요",
+    "next_2": "2. 디자인 사양(design spec)을 프로젝트 루트에 저장하세요",
+    "next_3": "3. svg_output/ 디렉터리에 SVG 파일을 생성하세요",
+    "imported_header": "[완료] 원본 파일을 가져왔습니다: {path}",
+    "archived_header": "보관된 원본 / URL 기록:",
+    "normalized_header": "정규화된 마크다운:",
+    "assets_header": "가져온 에셋 디렉터리:",
+    "notes_header": "참고 사항:",
+    "skipped_header": "건너뛴 항목:",
+    "validate_header": "프로젝트 검증: {path}",
+    "errors_header": "[오류]",
+    "warnings_header": "[경고]",
+    "valid_ok": "[완료] 프로젝트 구조가 정상입니다.",
+    "valid_with_warnings": "[완료] 프로젝트 구조는 유효하지만 경고가 있습니다.",
+    "invalid": "[오류] 프로젝트 구조가 올바르지 않습니다.",
+    "info_header": "프로젝트 정보: {name}",
+    "info_path": "경로: {value}",
+    "info_exists": "존재 여부: {value}",
+    "info_svg_count": "SVG 파일 수: {value}",
+    "info_spec": "디자인 사양: {value}",
+    "info_source": "원본 자료: {value}",
+    "info_source_count": "원본 파일 수: {value}",
+    "info_canvas": "캔버스 포맷: {value}",
+    "info_created": "생성일: {value}",
+    "yes": "예",
+    "no": "아니오"
+  },
+  "workflow": {
+    "strategist_complete": "전략가(Strategist) 단계 완료",
+    "image_gen_complete": "이미지 생성(Image_Generator) 단계 완료",
+    "executor_complete": "실행자(Executor) 단계 완료"
+  }
+}

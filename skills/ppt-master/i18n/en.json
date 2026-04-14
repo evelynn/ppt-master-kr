@@ -1,0 +1,47 @@
+{
+  "settings": {
+    "header": "PPT Master — Settings",
+    "file": "Settings file:    {path}",
+    "stored_language": "Stored language: {value}",
+    "active_language": "Active language: {value}",
+    "other_keys": "Other settings:",
+    "language_updated": "Language preference saved: {value}"
+  },
+  "project": {
+    "created": "Project created: {path}",
+    "canvas": "Canvas: {name} ({dimensions})",
+    "init_ok": "[OK] Project initialized: {path}",
+    "next_header": "Next:",
+    "next_1": "1. Put source files into sources/ (or use import-sources)",
+    "next_2": "2. Save your design spec to the project root",
+    "next_3": "3. Generate SVG files into svg_output/",
+    "imported_header": "[OK] Imported sources into: {path}",
+    "archived_header": "Archived originals / URL records:",
+    "normalized_header": "Normalized markdown:",
+    "assets_header": "Imported asset directories:",
+    "notes_header": "Notes:",
+    "skipped_header": "Skipped:",
+    "validate_header": "Project validation: {path}",
+    "errors_header": "[ERROR]",
+    "warnings_header": "[WARN]",
+    "valid_ok": "[OK] Project structure is complete.",
+    "valid_with_warnings": "[OK] Project structure is valid, with warnings.",
+    "invalid": "[ERROR] Project structure is invalid.",
+    "info_header": "Project info: {name}",
+    "info_path": "Path: {value}",
+    "info_exists": "Exists: {value}",
+    "info_svg_count": "SVG files: {value}",
+    "info_spec": "Design spec: {value}",
+    "info_source": "Source materials: {value}",
+    "info_source_count": "Source count: {value}",
+    "info_canvas": "Canvas format: {value}",
+    "info_created": "Created: {value}",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "workflow": {
+    "strategist_complete": "Strategist Phase Complete",
+    "image_gen_complete": "Image_Generator Phase Complete",
+    "executor_complete": "Executor Phase Complete"
+  }
+}

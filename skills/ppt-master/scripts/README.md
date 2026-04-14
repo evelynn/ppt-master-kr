@@ -2,6 +2,19 @@
 
 This directory contains user-facing scripts for conversion, project setup, SVG processing, export, and image generation.
 
+## Language (i18n)
+
+User-facing CLI output is localized through `i18n.py` using the translation bundles in `skills/ppt-master/i18n/<lang>.json`. Manage the active language via `settings.py`:
+
+```bash
+python3 scripts/settings.py show                 # inspect current settings
+python3 scripts/settings.py set-language ko      # switch to Korean (한국어)
+python3 scripts/settings.py set-language en      # switch to English
+python3 scripts/settings.py set-language auto    # follow system locale
+```
+
+Environment override: `PPT_MASTER_LANG=ko python3 scripts/<tool>.py ...` for a single invocation.
+
 ## Directory Layout
 
 - Top-level `scripts/`: runnable entry scripts
