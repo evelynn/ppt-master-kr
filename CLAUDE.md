@@ -2,6 +2,31 @@
 
 This file provides a project overview for Claude Code. Before executing PPT generation tasks, **you MUST first read `skills/ppt-master/SKILL.md`** for the complete workflow and rules.
 
+## Language Setting (언어 설정)
+
+PPT Master supports a persistent language preference in `skills/ppt-master/settings.json`.
+
+```bash
+# Switch to Korean — 이후 모든 CLI 출력과 AI 응답이 한국어로 제공됨
+python3 skills/ppt-master/scripts/settings.py set-language ko
+
+# Switch to English
+python3 skills/ppt-master/scripts/settings.py set-language en
+
+# Follow system locale (default)
+python3 skills/ppt-master/scripts/settings.py set-language auto
+
+# Inspect current settings
+python3 skills/ppt-master/scripts/settings.py show
+```
+
+When `language = "ko"`:
+- All PPT Master script output is printed in Korean.
+- The AI consults `skills/ppt-master/references/ko/*.md` overlays and MUST respond to the user — including the Eight Confirmations, checklists, progress reports, speaker notes, and feature descriptions — in Korean.
+- `design_spec.md` still uses the English template headings/field names (required for script parsing); only the content values are in Korean.
+
+You can also override per-session via `PPT_MASTER_LANG=ko` environment variable.
+
 ## Project Overview
 
 PPT Master is an AI-driven presentation generation system. Through multi-role collaboration (Strategist → Image_Generator → Executor), it converts source documents (PDF/DOCX/URL/Markdown) into natively editable PPTX with real PowerPoint shapes (DrawingML).

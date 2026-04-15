@@ -29,9 +29,28 @@ description: >
 > [!IMPORTANT]
 > ## 🌐 Language & Communication Rule
 >
-> - **Response language**: Always match the language of the user's input and provided source materials. For example, if the user asks in Chinese, respond in Chinese; if the source material is in English, respond in English.
-> - **Explicit override**: If the user explicitly requests a specific language (e.g., "请用英文回答" or "Reply in Chinese"), use that language instead.
-> - **Template format**: The `design_spec.md` file MUST always follow its original English template structure (section headings, field names), regardless of the conversation language. Content values within the template may be in the user's language.
+> PPT Master supports a persistent language preference stored in `skills/ppt-master/settings.json` (`language` field: `"en"`, `"ko"`, or `"auto"`). The AI MUST read this setting at the start of every PPT Master task and follow its resolved value.
+>
+> **Resolution order**:
+> 1. `PPT_MASTER_LANG` environment variable (if set to a supported code).
+> 2. `language` field in `skills/ppt-master/settings.json`.
+> 3. System locale (LANG / LC_ALL).
+> 4. Default: `en`.
+>
+> **Behavior per value**:
+> - `language = "ko"` (한국어 모드): ALL AI responses, recommendations, checklists, the Eight Confirmations, progress reports, warnings, speaker notes, and feature descriptions MUST be written in **Korean**. Additionally, load the Korean overlay role definitions from `references/ko/<role>.md` (e.g. `references/ko/SKILL.md`, `references/ko/strategist.md`, `references/ko/executor-base.md`, `references/ko/image-generator.md`) on top of the English originals.
+> - `language = "en"`: respond in English.
+> - `language = "auto"`: follow the language of the user's input and source materials. If the user explicitly requests a specific language (e.g. "请用英文回答" / "한국어로 답해줘" / "Reply in Chinese"), honor that request — an explicit request always wins over the stored setting for the current session.
+>
+> **Changing the language**:
+> ```bash
+> python3 skills/ppt-master/scripts/settings.py set-language ko   # switch to Korean
+> python3 skills/ppt-master/scripts/settings.py set-language en   # switch to English
+> python3 skills/ppt-master/scripts/settings.py set-language auto # follow system / user input
+> python3 skills/ppt-master/scripts/settings.py show              # inspect current settings
+> ```
+>
+> **Template format exception**: The `design_spec.md` file MUST always follow its original English template structure (section headings, field names), regardless of the conversation language. Only the content **values** within the template may be written in the user's language. This exception is required because downstream scripts parse design_spec.md using English field identifiers.
 
 > [!IMPORTANT]
 > ## 🔌 Compatibility With Generic Coding Skills
