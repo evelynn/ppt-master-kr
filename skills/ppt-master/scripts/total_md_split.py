@@ -28,6 +28,16 @@ import argparse
 import re
 from pathlib import Path
 
+_SCRIPT_DIR = Path(__file__).resolve().parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+
+try:
+    from i18n import t
+except ImportError:
+    def t(key, **kwargs):  # type: ignore
+        return key
+
 HEADING_RE = re.compile(r'^(#{1,6})\s*(.+?)\s*$')
 HR_RE = re.compile(r'^\s*[-*]{3,}\s*$')
 
@@ -273,7 +283,7 @@ def split_notes(notes: dict[str, str], output_dir: Path, verbose: bool = True) -
 def main() -> None:
     """Run the CLI entry point."""
     parser = argparse.ArgumentParser(
-        description='PPT Master - Speaker Notes Splitting Tool',
+        description=t("cli.total_md_split.description"),
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog='''
 Examples:
@@ -289,9 +299,9 @@ Features:
 '''
     )
 
-    parser.add_argument('project_path', type=str, help='Project directory path')
-    parser.add_argument('-o', '--output', type=str, default=None, help='Output directory path (default: notes directory under project)')
-    parser.add_argument('-q', '--quiet', action='store_true', help='Quiet mode')
+    parser.add_argument('project_path', type=str, help=t("cli.total_md_split.arg_project_path"))
+    parser.add_argument('-o', '--output', type=str, default=None, help=t("cli.total_md_split.arg_output"))
+    parser.add_argument('-q', '--quiet', action='store_true', help=t("cli.total_md_split.arg_quiet"))
 
     args = parser.parse_args()
 

@@ -39,6 +39,12 @@ from svg_finalize.embed_icons import process_svg_file as embed_icons_in_file
 from svg_finalize.embed_images import embed_images_in_svg
 from svg_finalize.fix_image_aspect import fix_image_aspect_in_svg
 
+try:
+    from i18n import t
+except ImportError:
+    def t(key, **kwargs):  # type: ignore
+        return key
+
 
 def safe_print(text: str) -> None:
     """Print text while tolerating Windows terminal encoding limits."""
@@ -254,7 +260,7 @@ def finalize_project(
 def main() -> None:
     """Run the CLI entry point."""
     parser = argparse.ArgumentParser(
-        description='PPT Master - SVG Post-processing Tool',
+        description=t("cli.finalize_svg.description"),
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog='''
 Examples:
@@ -272,18 +278,18 @@ Processing options (for --only):
         '''
     )
 
-    parser.add_argument('project_dir', type=Path, help='Project directory path')
+    parser.add_argument('project_dir', type=Path, help=t("cli.finalize_svg.arg_project_dir"))
     parser.add_argument('--only', nargs='+', metavar='OPTION',
                         choices=['embed-icons', 'crop-images', 'fix-aspect', 'embed-images', 'flatten-text', 'fix-rounded'],
-                        help='Execute only specified processing steps (default: all)')
+                        help=t("cli.finalize_svg.arg_only"))
     parser.add_argument('--dry-run', '-n', action='store_true',
-                        help='Preview only, do not execute')
+                        help=t("cli.finalize_svg.arg_dry_run"))
     parser.add_argument('--quiet', '-q', action='store_true',
-                        help='Quiet mode, reduce output')
+                        help=t("cli.finalize_svg.arg_quiet"))
     parser.add_argument('--compress', action='store_true',
-                        help='Compress images before embedding (JPEG quality=85, PNG optimize)')
+                        help=t("cli.finalize_svg.arg_compress"))
     parser.add_argument('--max-dimension', type=int, default=None,
-                        help='Downscale images exceeding this dimension on either axis (e.g., 2560)')
+                        help=t("cli.finalize_svg.arg_max_dimension"))
 
     args = parser.parse_args()
 

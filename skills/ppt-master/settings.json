@@ -1,4 +1,4 @@
 {
-  "language": "auto",
+  "language": "ko",
   "_comment": "Set 'language' to 'en', 'ko', or 'auto' (follow system locale). Change via: python3 skills/ppt-master/scripts/settings.py set-language ko"
 }
