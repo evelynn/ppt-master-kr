@@ -41,6 +41,16 @@ import sys
 import argparse
 from pathlib import Path
 
+_SCRIPT_DIR = Path(__file__).resolve().parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+
+try:
+    from i18n import t
+except ImportError:
+    def t(key, **kwargs):  # type: ignore
+        return key
+
 ENV_PATH = Path(__file__).resolve().parents[3] / ".env"
 IMAGE_ENV_PREFIXES = (
     "IMAGE_",
@@ -330,43 +340,43 @@ def _resolve_backend() -> tuple[object, str]:
 def main() -> None:
     """Run the CLI entry point."""
     parser = argparse.ArgumentParser(
-        description="Generate images using AI image model providers."
+        description=t("cli.image_gen.description")
     )
     parser.add_argument(
         "prompt", nargs="?", default="a beautiful landscape",
-        help="The text prompt for image generation."
+        help=t("cli.image_gen.arg_prompt")
     )
     parser.add_argument(
         "--negative_prompt", "-n", default=None,
-        help="Negative prompt to specify what to avoid."
+        help=t("cli.image_gen.arg_negative_prompt")
     )
     parser.add_argument(
         "--aspect_ratio", default="1:1", choices=ALL_ASPECT_RATIOS,
-        help=f"Aspect ratio. Default: 1:1."
+        help=t("cli.image_gen.arg_aspect_ratio")
     )
     parser.add_argument(
         "--image_size", default="1K",
-        help=f"Image size. Choices: {ALL_IMAGE_SIZES}. Default: 1K. (case-insensitive)"
+        help=t("cli.image_gen.arg_image_size", sizes=ALL_IMAGE_SIZES)
     )
     parser.add_argument(
         "--output", "-o", default=None,
-        help="Output directory. Default: current directory."
+        help=t("cli.image_gen.arg_output")
     )
     parser.add_argument(
         "--filename", "-f", default=None,
-        help="Output filename (without extension). Overrides auto-naming."
+        help=t("cli.image_gen.arg_filename")
     )
     parser.add_argument(
         "--model", "-m", default=None,
-        help="Model name. Default depends on backend."
+        help=t("cli.image_gen.arg_model")
     )
     parser.add_argument(
         "--backend", "-b", default=None, choices=SUPPORTED_BACKENDS,
-        help="Override IMAGE_BACKEND env var."
+        help=t("cli.image_gen.arg_backend")
     )
     parser.add_argument(
         "--list-backends", action="store_true",
-        help="List available backends grouped by support tier and exit."
+        help=t("cli.image_gen.arg_list_backends")
     )
 
     args = parser.parse_args()

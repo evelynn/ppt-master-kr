@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PPT Master Slide Gallery — Browse and view SVG presentation slides across various topics">
-    <meta name="keywords" content="slides, SVG, presentation, PPT, PowerPoint">
-    <meta property="og:title" content="Slide Gallery — PPT Master">
-    <meta property="og:description" content="Browse 15 example presentations with 229+ slides — AI-generated, natively editable PowerPoint from any document.">
+    <meta name="description" content="PPT Master 슬라이드 갤러리 — 다양한 주제의 SVG 프레젠테이션 슬라이드 탐색·감상">
+    <meta name="keywords" content="slides, SVG, presentation, PPT, PowerPoint, 슬라이드, 프레젠테이션, 파워포인트">
+    <meta property="og:title" content="슬라이드 갤러리 — PPT Master">
+    <meta property="og:description" content="15 개의 예시 프레젠테이션과 229+ 장의 슬라이드를 탐색 — 어떤 문서든 AI 로 생성한 편집 가능 파워포인트.">
     <meta property="og:url" content="https://hugohe3.github.io/ppt-master/viewer.html">
     <meta property="og:type" content="website">
-    <title>Slide Gallery — PPT Master</title>
+    <title>슬라이드 갤러리 — PPT Master</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -241,7 +241,7 @@
                 <div class="flex items-center space-x-4">
                     <a href="index.html" class="text-gray-600 hover:text-brand-600 transition-colors">
                         <i class="fas fa-arrow-left"></i>
-                        <span class="ml-2">Back to Projects</span>
+                        <span class="ml-2">프로젝트 목록으로</span>
                     </a>
                 </div>
 
@@ -250,7 +250,7 @@
                     <button onclick="toggleDropdown()"
                         class="flex items-center space-x-2 px-4 py-2 bg-white rounded-lg shadow border border-gray-200 hover:border-brand-400 transition-colors">
                         <span id="currentCollectionIcon" class="text-xl">🎴</span>
-                        <span id="currentCollectionName" class="font-medium text-gray-700">Select Collection</span>
+                        <span id="currentCollectionName" class="font-medium text-gray-700">컬렉션 선택</span>
                         <i class="fas fa-chevron-down text-gray-400"></i>
                     </button>
                     <div id="dropdownMenu"
@@ -264,25 +264,25 @@
                     <div class="flex items-center space-x-1 mr-4 bg-gray-100 rounded-lg p-1">
                         <button onclick="setViewMode('normal')" id="normalModeBtn"
                             class="view-mode-btn px-3 py-1 rounded-md text-xs font-medium text-gray-600 hover:bg-white"
-                            title="Normal View">
+                            title="일반 보기">
                             <i class="fas fa-columns"></i>
                         </button>
                         <button onclick="setViewMode('theater')" id="theaterModeBtn"
                             class="view-mode-btn px-3 py-1 rounded-md text-xs font-medium text-gray-600 hover:bg-white"
-                            title="Theater Mode (T)">
+                            title="극장 모드 (T)">
                             <i class="fas fa-tv"></i>
                         </button>
                     </div>
-                    <span class="text-gray-500">Shortcuts:</span>
+                    <span class="text-gray-500">단축키:</span>
                     <kbd class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded border">←</kbd>
                     <kbd class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded border">→</kbd>
-                    <span class="text-gray-500">Navigate</span>
+                    <span class="text-gray-500">이동</span>
                     <kbd class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded border ml-2">T</kbd>
-                    <span class="text-gray-500">Theater</span>
+                    <span class="text-gray-500">극장</span>
                     <kbd class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded border ml-2">F</kbd>
-                    <span class="text-gray-500">Fullscreen</span>
+                    <span class="text-gray-500">전체화면</span>
                     <kbd class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded border ml-2">ESC</kbd>
-                    <span class="text-gray-500">Back</span>
+                    <span class="text-gray-500">뒤로</span>
                 </div>
             </div>
         </div>
@@ -296,10 +296,10 @@
         <div id="libraryView">
             <div class="text-center mb-12">
                 <h1 class="text-4xl font-bold text-white mb-4 drop-shadow-lg">
-                    🎴 Slide Gallery
+                    🎴 슬라이드 갤러리
                 </h1>
                 <p class="text-white/80 text-lg">
-                    Select a collection to start browsing
+                    둘러볼 컬렉션을 선택하세요
                 </p>
             </div>
 
@@ -311,8 +311,8 @@
             <!-- Empty State -->
             <div id="emptyState" class="hidden text-center py-20">
                 <div class="text-6xl mb-4">📭</div>
-                <h3 class="text-xl font-medium text-white/80">No slide collections found</h3>
-                <p class="text-white/60 mt-2">Please add slide configurations</p>
+                <h3 class="text-xl font-medium text-white/80">표시할 슬라이드 컬렉션이 없습니다</h3>
+                <p class="text-white/60 mt-2">슬라이드 구성을 추가해 주세요</p>
             </div>
         </div>
 
@@ -323,13 +323,13 @@
                 <button onclick="backToLibrary()"
                     class="inline-flex items-center px-4 py-2 mb-4 text-white/80 hover:text-white transition-colors">
                     <i class="fas fa-th-large mr-2"></i>
-                    Back to Gallery
+                    갤러리로 돌아가기
                 </button>
                 <h1 id="viewerTitle" class="text-3xl font-bold text-white mb-2 drop-shadow-lg">
-                    Slide Title
+                    슬라이드 제목
                 </h1>
                 <p id="viewerDescription" class="text-white/70">
-                    Slide Description
+                    슬라이드 설명
                 </p>
             </div>
 
@@ -340,7 +340,7 @@
                     <div class="glass rounded-2xl p-4 slide-container">
                         <object id="mainSlide" data="" type="image/svg+xml"
                             class="w-full rounded-lg fade-in cursor-pointer" onclick="toggleFullscreen()">
-                            <p class="text-center text-gray-500 py-10">Loading SVG...</p>
+                            <p class="text-center text-gray-500 py-10">SVG 로드 중...</p>
                         </object>
                     </div>
 
@@ -374,7 +374,7 @@
                     <div class="glass rounded-2xl p-4 shadow-lg">
                         <h3 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
                             <i class="fas fa-th-large mr-2 text-brand-600"></i>
-                            Slide Index
+                            슬라이드 목차
                         </h3>
                         <div id="thumbnailContainer" class="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
                             <!-- Thumbnails will be generated by JavaScript -->
@@ -385,10 +385,10 @@
                     <div class="glass rounded-2xl p-4 shadow-lg mt-4">
                         <h3 class="text-sm font-semibold text-gray-600 mb-3 flex items-center">
                             <i class="fas fa-info-circle mr-2 text-brand-600"></i>
-                            Current Slide
+                            현재 슬라이드
                         </h3>
-                        <p id="slideTitle" class="text-gray-800 font-medium">Title</p>
-                        <p id="slideDesc" class="text-sm text-gray-500 mt-1">Description</p>
+                        <p id="slideTitle" class="text-gray-800 font-medium">제목</p>
+                        <p id="slideDesc" class="text-sm text-gray-500 mt-1">설명</p>
                     </div>
                 </div>
             </div>
@@ -397,7 +397,7 @@
             <div class="mt-12 slide-enter">
                 <h2 class="text-xl font-bold text-white mb-6 flex items-center drop-shadow">
                     <i class="fas fa-list-ul mr-3"></i>
-                    Overview
+                    전체 보기
                 </h2>
                 <div id="overviewGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                     <!-- Overview thumbnails will be generated by JavaScript -->
@@ -410,7 +410,7 @@
     <footer class="mt-12 py-6">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-white/60 text-sm">
-                PPT Master © 2025–2026 · Made with ❤️ by <a href="https://www.hehugo.com/" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">Hugo He</a>
+                PPT Master © 2025–2026 · <a href="https://www.hehugo.com/" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">Hugo He</a> 가 ❤️ 를 담아 제작
             </p>
         </div>
     </footer>
@@ -425,7 +425,7 @@
             <i class="fas fa-chevron-left"></i>
         </button>
         <object id="fullscreenImage" data="" type="image/svg+xml" class="fade-in">
-            <p>Loading SVG...</p>
+            <p>SVG 로드 중...</p>
         </object>
         <button onclick="event.stopPropagation(); nextSlide()"
             class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors">
@@ -441,381 +441,381 @@
         const collectionsData = [
             {
                 id: 'ppt169_顶级咨询风_心理治疗中的依恋',
-                title: '心理治疗中的依恋',
-                description: '探索依恋理论在心理治疗中的应用',
+                title: '심리치료에서의 애착',
+                description: '심리치료에 적용되는 애착 이론 탐구',
                 icon: '🧠',
                 color: '#6366f1',
                 folder: 'ppt169_顶级咨询风_心理治疗中的依恋/svg_final',
                 slides: [
-                    { file: 'P01_封面.svg', title: '封面', desc: '心理治疗中的依恋' },
-                    { file: 'P02_目录导航.svg', title: '目录导航', desc: '内容概览' },
-                    { file: 'P03_第一章引导页.svg', title: '第一章引导页', desc: '理论基础' },
-                    { file: 'P04_依恋研究三大发现.svg', title: '依恋研究三大发现', desc: '核心发现' },
-                    { file: 'P05_治疗关系作为发展熔炉.svg', title: '治疗关系作为发展熔炉', desc: '治疗关系' },
-                    { file: 'P06_未经思考的已知.svg', title: '未经思考的已知', desc: '潜意识' },
-                    { file: 'P07_心智化与觉察.svg', title: '心智化与觉察', desc: '心智化' },
-                    { file: 'P08_第二章引导页.svg', title: '第二章引导页', desc: '依恋模式' },
-                    { file: 'P09_Bowlby依恋行为系统.svg', title: 'Bowlby依恋行为系统', desc: 'Bowlby理论' },
-                    { file: 'P10_Ainsworth四种依恋模式.svg', title: 'Ainsworth四种依恋模式', desc: '依恋分类' },
-                    { file: 'P11_MaryMain成人依恋访谈.svg', title: 'MaryMain成人依恋访谈', desc: 'AAI' },
-                    { file: 'P12_Fonagy心智化与三种体验模式.svg', title: 'Fonagy心智化', desc: '体验模式' },
-                    { file: 'P13_第三章引导页.svg', title: '第三章引导页', desc: '神经生物学' },
-                    { file: 'P14_自我发展层级.svg', title: '自我发展层级', desc: '发展阶段' },
-                    { file: 'P15_依恋的神经生物学.svg', title: '依恋的神经生物学', desc: '神经科学' },
-                    { file: 'P16_情感调节与依恋策略.svg', title: '情感调节与依恋策略', desc: '情感调节' },
-                    { file: 'P17_发展的迫切需求物.svg', title: '发展的迫切需求物', desc: '发展需求' },
-                    { file: 'P18_第四章引导页.svg', title: '第四章引导页', desc: '治疗应用' },
-                    { file: 'P19_关系精神分析重新定义.svg', title: '关系精神分析重新定义', desc: '精神分析' },
-                    { file: 'P20_冷漠型患者.svg', title: '冷漠型患者', desc: '回避型' },
-                    { file: 'P21_迷恋型患者.svg', title: '迷恋型患者', desc: '焦虑型' },
-                    { file: 'P22_未解决型患者.svg', title: '未解决型患者', desc: '混乱型' },
-                    { file: 'P23_第五章引导页.svg', title: '第五章引导页', desc: '治疗技术' },
-                    { file: 'P24_处理被唤起与活现.svg', title: '处理被唤起与活现', desc: '移情' },
-                    { file: 'P25_与身体工作.svg', title: '与身体工作', desc: '躯体治疗' },
-                    { file: 'P26_心理解放的双螺旋.svg', title: '心理解放的双螺旋', desc: '整合' },
-                    { file: 'P27_培养觉察与心智化.svg', title: '培养觉察与心智化', desc: '技术' },
-                    { file: 'P28_治疗师的贡献.svg', title: '治疗师的贡献', desc: '治疗师角色' },
-                    { file: 'P29_核心概念速查表.svg', title: '核心概念速查表', desc: '概念总结' },
-                    { file: 'P30_结语.svg', title: '结语', desc: '总结' },
-                    { file: 'P31_推荐阅读.svg', title: '推荐阅读', desc: '参考文献' },
-                    { file: 'P32_封底.svg', title: '封底', desc: '结束页' }
+                    { file: 'P01_封面.svg', title: '표지', desc: '심리치료에서의 애착' },
+                    { file: 'P02_目录导航.svg', title: '목차 내비게이션', desc: '내용 개요' },
+                    { file: 'P03_第一章引导页.svg', title: '제1장 도입', desc: '이론적 기초' },
+                    { file: 'P04_依恋研究三大发现.svg', title: '애착 연구의 3대 발견', desc: '핵심 발견' },
+                    { file: 'P05_治疗关系作为发展熔炉.svg', title: '발달 용광로로서의 치료 관계', desc: '치료 관계' },
+                    { file: 'P06_未经思考的已知.svg', title: '사유되지 않은 앎', desc: '무의식' },
+                    { file: 'P07_心智化与觉察.svg', title: '멘털라이징과 자각', desc: '멘털라이징' },
+                    { file: 'P08_第二章引导页.svg', title: '제2장 도입', desc: '애착 유형' },
+                    { file: 'P09_Bowlby依恋行为系统.svg', title: 'Bowlby 애착 행동 시스템', desc: 'Bowlby 이론' },
+                    { file: 'P10_Ainsworth四种依恋模式.svg', title: 'Ainsworth 4가지 애착 유형', desc: '애착 분류' },
+                    { file: 'P11_MaryMain成人依恋访谈.svg', title: 'Mary Main 성인 애착 면담', desc: 'AAI' },
+                    { file: 'P12_Fonagy心智化与三种体验模式.svg', title: 'Fonagy 멘털라이징', desc: '경험 양식' },
+                    { file: 'P13_第三章引导页.svg', title: '제3장 도입', desc: '신경생물학' },
+                    { file: 'P14_自我发展层级.svg', title: '자아 발달 단계', desc: '발달 단계' },
+                    { file: 'P15_依恋的神经生物学.svg', title: '애착의 신경생물학', desc: '뇌과학' },
+                    { file: 'P16_情感调节与依恋策略.svg', title: '정서 조절과 애착 전략', desc: '정서 조절' },
+                    { file: 'P17_发展的迫切需求物.svg', title: '발달의 긴급한 요구', desc: '발달 니즈' },
+                    { file: 'P18_第四章引导页.svg', title: '제4장 도입', desc: '치료적 적용' },
+                    { file: 'P19_关系精神分析重新定义.svg', title: '관계 정신분석 재정의', desc: '정신분석' },
+                    { file: 'P20_冷漠型患者.svg', title: '회피형 환자', desc: '회피형' },
+                    { file: 'P21_迷恋型患者.svg', title: '집착형 환자', desc: '불안형' },
+                    { file: 'P22_未解决型患者.svg', title: '미해결형 환자', desc: '혼란형' },
+                    { file: 'P23_第五章引导页.svg', title: '제5장 도입', desc: '치료 기법' },
+                    { file: 'P24_处理被唤起与活现.svg', title: '환기와 실연 다루기', desc: '전이' },
+                    { file: 'P25_与身体工作.svg', title: '신체와 함께 작업하기', desc: '신체 치료' },
+                    { file: 'P26_心理解放的双螺旋.svg', title: '심리 해방의 이중 나선', desc: '통합' },
+                    { file: 'P27_培养觉察与心智化.svg', title: '자각과 멘털라이징 기르기', desc: '기법' },
+                    { file: 'P28_治疗师的贡献.svg', title: '치료사의 기여', desc: '치료사 역할' },
+                    { file: 'P29_核心概念速查表.svg', title: '핵심 개념 요약표', desc: '개념 정리' },
+                    { file: 'P30_结语.svg', title: '맺음말', desc: '결론' },
+                    { file: 'P31_推荐阅读.svg', title: '추천 도서', desc: '참고 문헌' },
+                    { file: 'P32_封底.svg', title: '뒤표지', desc: '마지막 페이지' }
                 ]
             },
             {
                 id: 'ppt169_顶级咨询风_重庆市区域报告_ppt169_20251213',
-                title: '重庆市区域报告',
-                description: '重庆市经济财政分析报告',
+                title: '충칭시 지역 리포트',
+                description: '충칭시 경제·재정 분석 보고서',
                 icon: '🏙️',
                 color: '#0ea5e9',
                 folder: 'ppt169_顶级咨询风_重庆市区域报告_ppt169_20251213/svg_final',
                 slides: [
-                    { file: 'P01_封面.svg', title: '封面', desc: '重庆市区域报告' },
-                    { file: 'P02_目录.svg', title: '目录', desc: '内容概览' },
-                    { file: 'P03_章节_经济情况.svg', title: '经济情况', desc: '章节引导' },
-                    { file: 'P04_区域经济发展.svg', title: '区域经济发展', desc: '经济分析' },
-                    { file: 'P05_辖区经济对比.svg', title: '辖区经济对比', desc: '对比分析' },
-                    { file: 'P06_产业与人口.svg', title: '产业与人口', desc: '产业分析' },
-                    { file: 'P07_章节_财政债务.svg', title: '财政债务', desc: '章节引导' },
-                    { file: 'P08_财政实力.svg', title: '财政实力', desc: '财政分析' },
-                    { file: 'P09_债务负担.svg', title: '债务负担', desc: '债务分析' },
-                    { file: 'P10_章节_区域城投.svg', title: '区域城投', desc: '章节引导' },
-                    { file: 'P11_城投概览.svg', title: '城投概览', desc: '城投分析' },
-                    { file: 'P12_城投债分析.svg', title: '城投债分析', desc: '债券分析' },
-                    { file: 'P13_章节_银行业.svg', title: '银行业', desc: '章节引导' },
-                    { file: 'P14_银行业详情.svg', title: '银行业详情', desc: '银行分析' },
-                    { file: 'P15_区域融资.svg', title: '区域融资', desc: '融资分析' },
-                    { file: 'P16_区域风险.svg', title: '区域风险', desc: '风险评估' },
-                    { file: 'P17_重点企业.svg', title: '重点企业', desc: '企业分析' },
-                    { file: 'P18_报告总结.svg', title: '报告总结', desc: '总结' },
-                    { file: 'P19_指标说明.svg', title: '指标说明', desc: '附录' },
-                    { file: 'P20_封底.svg', title: '封底', desc: '结束页' }
+                    { file: 'P01_封面.svg', title: '표지', desc: '충칭시 지역 리포트' },
+                    { file: 'P02_目录.svg', title: '목차', desc: '내용 개요' },
+                    { file: 'P03_章节_经济情况.svg', title: '경제 현황', desc: '챕터 도입' },
+                    { file: 'P04_区域经济发展.svg', title: '지역 경제 발전', desc: '경제 분석' },
+                    { file: 'P05_辖区经济对比.svg', title: '관할구 경제 비교', desc: '비교 분석' },
+                    { file: 'P06_产业与人口.svg', title: '산업과 인구', desc: '산업 분석' },
+                    { file: 'P07_章节_财政债务.svg', title: '재정 부채', desc: '챕터 도입' },
+                    { file: 'P08_财政实力.svg', title: '재정 체력', desc: '재정 분석' },
+                    { file: 'P09_债务负担.svg', title: '부채 부담', desc: '부채 분석' },
+                    { file: 'P10_章节_区域城投.svg', title: '지역 도시투자', desc: '챕터 도입' },
+                    { file: 'P11_城投概览.svg', title: '도시투자 개요', desc: '도시투자 분석' },
+                    { file: 'P12_城投债分析.svg', title: '도시투자채 분석', desc: '채권 분석' },
+                    { file: 'P13_章节_银行业.svg', title: '은행업', desc: '챕터 도입' },
+                    { file: 'P14_银行业详情.svg', title: '은행업 상세', desc: '은행 분석' },
+                    { file: 'P15_区域融资.svg', title: '지역 자금 조달', desc: '자금 조달 분석' },
+                    { file: 'P16_区域风险.svg', title: '지역 리스크', desc: '리스크 평가' },
+                    { file: 'P17_重点企业.svg', title: '중점 기업', desc: '기업 분석' },
+                    { file: 'P18_报告总结.svg', title: '보고 요약', desc: '총정리' },
+                    { file: 'P19_指标说明.svg', title: '지표 설명', desc: '부록' },
+                    { file: 'P20_封底.svg', title: '뒤표지', desc: '마지막 페이지' }
                 ]
             },
             {
                 id: 'ppt169_顶级咨询风_构建有效AI代理_Anthropic',
-                title: '构建有效AI代理',
-                description: 'Anthropic AI 代理构建指南',
+                title: '효과적인 AI 에이전트 구축',
+                description: 'Anthropic AI 에이전트 구축 가이드',
                 icon: '🤖',
                 color: '#8b5cf6',
                 folder: 'ppt169_顶级咨询风_构建有效AI代理_Anthropic/svg_final',
                 slides: [
-                    { file: 'P01_Cover.svg', title: '封面', desc: '构建有效AI代理' },
-                    { file: 'P02_Executive_Summary.svg', title: '执行摘要', desc: '概述' },
-                    { file: 'P03_Agenda.svg', title: '议程', desc: '内容概览' },
-                    { file: 'P04_What_Are_Agents.svg', title: '什么是代理', desc: '定义' },
-                    { file: 'P05_When_To_Use.svg', title: '何时使用', desc: '应用场景' },
-                    { file: 'P06_Building_Block.svg', title: '构建模块', desc: '基础组件' },
-                    { file: 'P07_Workflow_Chaining.svg', title: '工作流链接', desc: '链式调用' },
-                    { file: 'P08_Workflow_Routing.svg', title: '工作流路由', desc: '路由策略' },
-                    { file: 'P09_Workflow_Parallelization.svg', title: '工作流并行', desc: '并行处理' },
-                    { file: 'P10_Workflow_Advanced.svg', title: '高级工作流', desc: '进阶模式' },
-                    { file: 'P11_Autonomous_Agents.svg', title: '自主代理', desc: '自主运行' },
-                    { file: 'P12_When_To_Use_Agents.svg', title: '何时使用代理', desc: '决策指南' },
-                    { file: 'P13_Case_Studies.svg', title: '案例研究', desc: '实践案例' },
-                    { file: 'P14_Tool_Engineering.svg', title: '工具工程', desc: '工具设计' },
-                    { file: 'P15_Summary.svg', title: '总结', desc: '结束' }
+                    { file: 'P01_Cover.svg', title: '표지', desc: '효과적인 AI 에이전트 구축' },
+                    { file: 'P02_Executive_Summary.svg', title: '요약', desc: '개요' },
+                    { file: 'P03_Agenda.svg', title: '어젠다', desc: '내용 개요' },
+                    { file: 'P04_What_Are_Agents.svg', title: '에이전트란', desc: '정의' },
+                    { file: 'P05_When_To_Use.svg', title: '언제 사용할까', desc: '활용 시점' },
+                    { file: 'P06_Building_Block.svg', title: '빌딩 블록', desc: '기본 구성요소' },
+                    { file: 'P07_Workflow_Chaining.svg', title: '워크플로 체이닝', desc: '체인 호출' },
+                    { file: 'P08_Workflow_Routing.svg', title: '워크플로 라우팅', desc: '라우팅 전략' },
+                    { file: 'P09_Workflow_Parallelization.svg', title: '워크플로 병렬화', desc: '병렬 처리' },
+                    { file: 'P10_Workflow_Advanced.svg', title: '고급 워크플로', desc: '심화 패턴' },
+                    { file: 'P11_Autonomous_Agents.svg', title: '자율 에이전트', desc: '자율 실행' },
+                    { file: 'P12_When_To_Use_Agents.svg', title: '에이전트 사용 시점', desc: '의사결정 가이드' },
+                    { file: 'P13_Case_Studies.svg', title: '사례 연구', desc: '실전 케이스' },
+                    { file: 'P14_Tool_Engineering.svg', title: '툴 엔지니어링', desc: '툴 설계' },
+                    { file: 'P15_Summary.svg', title: '요약', desc: '마무리' }
                 ]
             },
             {
                 id: 'ppt169_顶级咨询风_甘孜州经济财政分析',
-                title: '甘孜州经济财政分析',
-                description: '甘孜藏族自治州经济财政研究报告',
+                title: '간쯔저우 경제·재정 분석',
+                description: '간쯔 티베트족 자치주 경제·재정 연구 보고서',
                 icon: '🏔️',
                 color: '#10b981',
                 folder: 'ppt169_顶级咨询风_甘孜州经济财政分析/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '甘孜州分析' },
-                    { file: 'slide_02_toc.svg', title: '目录', desc: '内容概览' },
-                    { file: 'slide_03_executive_summary.svg', title: '执行摘要', desc: '概述' },
-                    { file: 'slide_04_economy_overview.svg', title: '经济概览', desc: '经济分析' },
-                    { file: 'slide_05_gdp_analysis.svg', title: 'GDP分析', desc: 'GDP' },
-                    { file: 'slide_06_population.svg', title: '人口', desc: '人口分析' },
-                    { file: 'slide_07_fiscal_revenue.svg', title: '财政收入', desc: '收入分析' },
-                    { file: 'slide_08_fiscal_expenditure.svg', title: '财政支出', desc: '支出分析' },
-                    { file: 'slide_09_fiscal_balance.svg', title: '财政平衡', desc: '平衡分析' },
-                    { file: 'slide_10_gov_fund.svg', title: '政府基金', desc: '基金分析' },
-                    { file: 'slide_11_debt_overview.svg', title: '债务概览', desc: '债务分析' },
-                    { file: 'slide_12_debt_capacity.svg', title: '债务能力', desc: '偿债能力' },
-                    { file: 'slide_13_debt_risk.svg', title: '债务风险', desc: '风险评估' },
-                    { file: 'slide_14_comprehensive.svg', title: '综合分析', desc: '综合评估' },
-                    { file: 'slide_15_fund_acquisition.svg', title: '资金获取', desc: '融资分析' },
-                    { file: 'slide_16_summary_table.svg', title: '汇总表', desc: '数据汇总' },
-                    { file: 'slide_17_conclusion.svg', title: '结论', desc: '结束' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '간쯔저우 분석' },
+                    { file: 'slide_02_toc.svg', title: '목차', desc: '내용 개요' },
+                    { file: 'slide_03_executive_summary.svg', title: '요약', desc: '개요' },
+                    { file: 'slide_04_economy_overview.svg', title: '경제 개요', desc: '경제 분석' },
+                    { file: 'slide_05_gdp_analysis.svg', title: 'GDP 분석', desc: 'GDP' },
+                    { file: 'slide_06_population.svg', title: '인구', desc: '인구 분석' },
+                    { file: 'slide_07_fiscal_revenue.svg', title: '재정 수입', desc: '수입 분석' },
+                    { file: 'slide_08_fiscal_expenditure.svg', title: '재정 지출', desc: '지출 분석' },
+                    { file: 'slide_09_fiscal_balance.svg', title: '재정 수지', desc: '수지 분석' },
+                    { file: 'slide_10_gov_fund.svg', title: '정부 기금', desc: '기금 분석' },
+                    { file: 'slide_11_debt_overview.svg', title: '부채 개요', desc: '부채 분석' },
+                    { file: 'slide_12_debt_capacity.svg', title: '부채 수용력', desc: '상환 능력' },
+                    { file: 'slide_13_debt_risk.svg', title: '부채 리스크', desc: '리스크 평가' },
+                    { file: 'slide_14_comprehensive.svg', title: '종합 분석', desc: '종합 평가' },
+                    { file: 'slide_15_fund_acquisition.svg', title: '자금 확보', desc: '조달 분석' },
+                    { file: 'slide_16_summary_table.svg', title: '요약표', desc: '데이터 집계' },
+                    { file: 'slide_17_conclusion.svg', title: '결론', desc: '마무리' }
                 ]
             },
             {
                 id: 'ppt169_高端咨询风_南欧江水电站战略评估',
-                title: '南欧江水电站战略评估',
-                description: '水电站项目战略分析报告',
+                title: '남우강 수력발전 전략 평가',
+                description: '수력발전 프로젝트 전략 분석 보고서',
                 icon: '💧',
                 color: '#06b6d4',
                 folder: 'ppt169_高端咨询风_南欧江水电站战略评估/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '战略评估' },
-                    { file: 'slide_02_toc.svg', title: '目录', desc: '内容概览' },
-                    { file: 'slide_03_executive_summary.svg', title: '执行摘要', desc: '概述' },
-                    { file: 'slide_04_project_overview.svg', title: '项目概览', desc: '项目介绍' },
-                    { file: 'slide_05_cascade_logic.svg', title: '级联逻辑', desc: '技术分析' },
-                    { file: 'slide_06_technical_params.svg', title: '技术参数', desc: '参数详情' },
-                    { file: 'slide_07_business_model.svg', title: '商业模式', desc: '商业分析' },
-                    { file: 'slide_08_financing.svg', title: '融资', desc: '融资方案' },
-                    { file: 'slide_09_arbitration_overview.svg', title: '仲裁概览', desc: '法律分析' },
-                    { file: 'slide_10_claim_breakdown.svg', title: '索赔分解', desc: '索赔分析' },
-                    { file: 'slide_11_macro_crisis.svg', title: '宏观危机', desc: '宏观分析' },
-                    { file: 'slide_12_currency_collapse.svg', title: '货币崩溃', desc: '货币分析' },
-                    { file: 'slide_13_edl_black_hole.svg', title: 'EDL黑洞', desc: '风险分析' },
-                    { file: 'slide_14_debt_equity_swap.svg', title: '债转股', desc: '重组方案' },
-                    { file: 'slide_15_geopolitics.svg', title: '地缘政治', desc: '政治分析' },
-                    { file: 'slide_16_env_social.svg', title: '环境社会', desc: 'ESG' },
-                    { file: 'slide_17_flood_event.svg', title: '洪水事件', desc: '风险事件' },
-                    { file: 'slide_18_conclusions.svg', title: '结论', desc: '总结' },
-                    { file: 'slide_19_outlook.svg', title: '展望', desc: '未来展望' },
-                    { file: 'slide_20_appendix.svg', title: '附录', desc: '补充资料' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '전략 평가' },
+                    { file: 'slide_02_toc.svg', title: '목차', desc: '내용 개요' },
+                    { file: 'slide_03_executive_summary.svg', title: '요약', desc: '개요' },
+                    { file: 'slide_04_project_overview.svg', title: '프로젝트 개요', desc: '프로젝트 소개' },
+                    { file: 'slide_05_cascade_logic.svg', title: '단계 논리', desc: '기술 분석' },
+                    { file: 'slide_06_technical_params.svg', title: '기술 파라미터', desc: '파라미터 상세' },
+                    { file: 'slide_07_business_model.svg', title: '비즈니스 모델', desc: '사업 분석' },
+                    { file: 'slide_08_financing.svg', title: '자금 조달', desc: '조달 방안' },
+                    { file: 'slide_09_arbitration_overview.svg', title: '중재 개요', desc: '법률 분석' },
+                    { file: 'slide_10_claim_breakdown.svg', title: '청구 분해', desc: '청구 분석' },
+                    { file: 'slide_11_macro_crisis.svg', title: '거시 위기', desc: '거시 분석' },
+                    { file: 'slide_12_currency_collapse.svg', title: '통화 붕괴', desc: '통화 분석' },
+                    { file: 'slide_13_edl_black_hole.svg', title: 'EDL 블랙홀', desc: '리스크 분석' },
+                    { file: 'slide_14_debt_equity_swap.svg', title: '출자 전환', desc: '구조조정안' },
+                    { file: 'slide_15_geopolitics.svg', title: '지정학', desc: '정치 분석' },
+                    { file: 'slide_16_env_social.svg', title: '환경·사회', desc: 'ESG' },
+                    { file: 'slide_17_flood_event.svg', title: '홍수 사건', desc: '리스크 이벤트' },
+                    { file: 'slide_18_conclusions.svg', title: '결론', desc: '총정리' },
+                    { file: 'slide_19_outlook.svg', title: '전망', desc: '향후 전망' },
+                    { file: 'slide_20_appendix.svg', title: '부록', desc: '보충 자료' }
                 ]
             },
             {
                 id: 'ppt169_高端咨询风_汽车认证五年战略规划',
-                title: '汽车认证五年战略规划',
-                description: '汽车认证行业战略规划报告',
+                title: '자동차 인증 5개년 전략 계획',
+                description: '자동차 인증 산업 전략 계획 보고서',
                 icon: '🚗',
                 color: '#f59e0b',
                 folder: 'ppt169_高端咨询风_汽车认证五年战略规划/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '战略规划' },
-                    { file: 'slide_02_toc.svg', title: '目录', desc: '内容概览' },
-                    { file: 'slide_03_executive_summary.svg', title: '执行摘要', desc: '概述' },
-                    { file: 'slide_04_industry_overview.svg', title: '行业概览', desc: '行业分析' },
-                    { file: 'slide_05_nev_trends.svg', title: '新能源趋势', desc: 'NEV' },
-                    { file: 'slide_06_icv_trends.svg', title: '智能网联趋势', desc: 'ICV' },
-                    { file: 'slide_07_intl_standards.svg', title: '国际标准', desc: '标准分析' },
-                    { file: 'slide_08_digital_strategy.svg', title: '数字化战略', desc: '数字化' },
-                    { file: 'slide_09_digital_platform.svg', title: '数字平台', desc: '平台建设' },
-                    { file: 'slide_10_digital_tech.svg', title: '数字技术', desc: '技术应用' },
-                    { file: 'slide_11_innovation_overview.svg', title: '创新概览', desc: '创新分析' },
-                    { file: 'slide_12_green_certification.svg', title: '绿色认证', desc: '环保认证' },
-                    { file: 'slide_13_safety_certification.svg', title: '安全认证', desc: '安全标准' },
-                    { file: 'slide_14_intl_strategy.svg', title: '国际战略', desc: '国际化' },
-                    { file: 'slide_15_intl_layout.svg', title: '国际布局', desc: '全球布局' },
-                    { file: 'slide_16_policy_env.svg', title: '政策环境', desc: '政策分析' },
-                    { file: 'slide_17_org_capability.svg', title: '组织能力', desc: '能力建设' },
-                    { file: 'slide_18_roadmap.svg', title: '路线图', desc: '实施计划' },
-                    { file: 'slide_19_kpi_targets.svg', title: 'KPI目标', desc: '绩效指标' },
-                    { file: 'slide_20_conclusion.svg', title: '结论', desc: '总结' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '전략 계획' },
+                    { file: 'slide_02_toc.svg', title: '목차', desc: '내용 개요' },
+                    { file: 'slide_03_executive_summary.svg', title: '요약', desc: '개요' },
+                    { file: 'slide_04_industry_overview.svg', title: '산업 개요', desc: '산업 분석' },
+                    { file: 'slide_05_nev_trends.svg', title: '신에너지차 트렌드', desc: 'NEV' },
+                    { file: 'slide_06_icv_trends.svg', title: '지능형 커넥티드 트렌드', desc: 'ICV' },
+                    { file: 'slide_07_intl_standards.svg', title: '국제 표준', desc: '표준 분석' },
+                    { file: 'slide_08_digital_strategy.svg', title: '디지털 전략', desc: '디지털화' },
+                    { file: 'slide_09_digital_platform.svg', title: '디지털 플랫폼', desc: '플랫폼 구축' },
+                    { file: 'slide_10_digital_tech.svg', title: '디지털 기술', desc: '기술 적용' },
+                    { file: 'slide_11_innovation_overview.svg', title: '혁신 개요', desc: '혁신 분석' },
+                    { file: 'slide_12_green_certification.svg', title: '그린 인증', desc: '환경 인증' },
+                    { file: 'slide_13_safety_certification.svg', title: '안전 인증', desc: '안전 표준' },
+                    { file: 'slide_14_intl_strategy.svg', title: '국제 전략', desc: '국제화' },
+                    { file: 'slide_15_intl_layout.svg', title: '국제 배치', desc: '글로벌 배치' },
+                    { file: 'slide_16_policy_env.svg', title: '정책 환경', desc: '정책 분석' },
+                    { file: 'slide_17_org_capability.svg', title: '조직 역량', desc: '역량 구축' },
+                    { file: 'slide_18_roadmap.svg', title: '로드맵', desc: '실행 계획' },
+                    { file: 'slide_19_kpi_targets.svg', title: 'KPI 목표', desc: '성과 지표' },
+                    { file: 'slide_20_conclusion.svg', title: '결론', desc: '총정리' }
                 ]
             },
             {
                 id: 'ppt169_麦肯锡风_kimsoong_customer_loyalty',
-                title: '客户忠诚度计划分析',
-                description: '麦肯锡风格客户忠诚度战略分析',
+                title: '고객 로열티 프로그램 분석',
+                description: '맥킨지 스타일 고객 로열티 전략 분석',
                 icon: '💎',
                 color: '#ec4899',
                 folder: 'ppt169_麦肯锡风_kimsoong_customer_loyalty/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '客户忠诚度' },
-                    { file: 'slide_02_situation.svg', title: '现状分析', desc: '现状' },
-                    { file: 'slide_03_customer_profile.svg', title: '客户画像', desc: '客户分析' },
-                    { file: 'slide_04_priorities_matrix.svg', title: '优先级矩阵', desc: '优先级' },
-                    { file: 'slide_05_root_cause.svg', title: '根因分析', desc: '原因分析' },
-                    { file: 'slide_06_strategic_pillars.svg', title: '战略支柱', desc: '战略框架' },
-                    { file: 'slide_07_initiatives.svg', title: '行动计划', desc: '实施方案' },
-                    { file: 'slide_08_roadmap.svg', title: '路线图', desc: '时间规划' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '고객 로열티' },
+                    { file: 'slide_02_situation.svg', title: '현황 분석', desc: '현황' },
+                    { file: 'slide_03_customer_profile.svg', title: '고객 프로파일', desc: '고객 분석' },
+                    { file: 'slide_04_priorities_matrix.svg', title: '우선순위 매트릭스', desc: '우선순위' },
+                    { file: 'slide_05_root_cause.svg', title: '근본 원인 분석', desc: '원인 분석' },
+                    { file: 'slide_06_strategic_pillars.svg', title: '전략 축', desc: '전략 프레임워크' },
+                    { file: 'slide_07_initiatives.svg', title: '액션 플랜', desc: '실행 방안' },
+                    { file: 'slide_08_roadmap.svg', title: '로드맵', desc: '일정 계획' }
                 ]
             },
             {
                 id: 'ppt169_易理风_地山谦卦深度研究',
-                title: '地山谦卦深度研究',
-                description: '易经谦卦的深度解读与应用',
+                title: '지산겸괘 심층 연구',
+                description: '역경 겸괘의 심층 해석과 응용',
                 icon: '☯️',
                 color: '#78716c',
                 folder: 'ppt169_易理风_地山谦卦深度研究/svg_final',
                 slides: [
-                    { file: 'P01_封面.svg', title: '封面', desc: '谦卦研究' },
-                    { file: 'P02_目录导航.svg', title: '目录导航', desc: '内容概览' },
-                    { file: 'P03_谦卦总览.svg', title: '谦卦总览', desc: '卦象概述' },
-                    { file: 'P04_字源解构.svg', title: '字源解构', desc: '文字分析' },
-                    { file: 'P05_卦画物理图景.svg', title: '卦画物理图景', desc: '卦画解读' },
-                    { file: 'P06_天道与地道.svg', title: '天道与地道', desc: '天地之道' },
-                    { file: 'P07_鬼神与人道.svg', title: '鬼神与人道', desc: '鬼神人道' },
-                    { file: 'P08_六爻总览.svg', title: '六爻总览', desc: '爻辞概述' },
-                    { file: 'P09_初六谦谦君子.svg', title: '初六谦谦君子', desc: '初爻' },
-                    { file: 'P10_六二鸣谦贞吉.svg', title: '六二鸣谦贞吉', desc: '二爻' },
-                    { file: 'P11_九三劳谦君子.svg', title: '九三劳谦君子', desc: '三爻' },
-                    { file: 'P12_六四与六五.svg', title: '六四与六五', desc: '四五爻' },
-                    { file: 'P13_上六鸣谦行师.svg', title: '上六鸣谦行师', desc: '上爻' },
-                    { file: 'P14_综卦与错卦.svg', title: '综卦与错卦', desc: '综错卦' },
-                    { file: 'P15_交互卦雷水解.svg', title: '交互卦雷水解', desc: '互卦' },
-                    { file: 'P16_第五级领导力.svg', title: '第五级领导力', desc: '现代应用' },
-                    { file: 'P17_达克效应与品牌管理.svg', title: '达克效应与品牌管理', desc: '商业应用' },
-                    { file: 'P18_真谦与伪谦.svg', title: '真谦与伪谦', desc: '辨析' },
-                    { file: 'P19_核心洞见.svg', title: '核心洞见', desc: '总结' },
-                    { file: 'P20_感谢页.svg', title: '感谢页', desc: '结束' }
+                    { file: 'P01_封面.svg', title: '표지', desc: '겸괘 연구' },
+                    { file: 'P02_目录导航.svg', title: '목차 내비게이션', desc: '내용 개요' },
+                    { file: 'P03_谦卦总览.svg', title: '겸괘 총람', desc: '괘상 개요' },
+                    { file: 'P04_字源解构.svg', title: '자원 해체', desc: '문자 분석' },
+                    { file: 'P05_卦画物理图景.svg', title: '괘화의 물리적 도상', desc: '괘화 해독' },
+                    { file: 'P06_天道与地道.svg', title: '천도와 지도', desc: '천지의 도' },
+                    { file: 'P07_鬼神与人道.svg', title: '귀신과 인도', desc: '귀신·인도' },
+                    { file: 'P08_六爻总览.svg', title: '6효 총람', desc: '효사 개요' },
+                    { file: 'P09_初六谦谦君子.svg', title: '초육 겸겸군자', desc: '초효' },
+                    { file: 'P10_六二鸣谦贞吉.svg', title: '육이 명겸정길', desc: '이효' },
+                    { file: 'P11_九三劳谦君子.svg', title: '구삼 노겸군자', desc: '삼효' },
+                    { file: 'P12_六四与六五.svg', title: '육사와 육오', desc: '사·오효' },
+                    { file: 'P13_上六鸣谦行师.svg', title: '상육 명겸행사', desc: '상효' },
+                    { file: 'P14_综卦与错卦.svg', title: '종괘와 착괘', desc: '종착괘' },
+                    { file: 'P15_交互卦雷水解.svg', title: '호괘 뇌수해', desc: '호괘' },
+                    { file: 'P16_第五级领导力.svg', title: '레벨 5 리더십', desc: '현대 응용' },
+                    { file: 'P17_达克效应与品牌管理.svg', title: '더닝-크루거 효과와 브랜드 관리', desc: '비즈니스 응용' },
+                    { file: 'P18_真谦与伪谦.svg', title: '진정한 겸손과 거짓 겸손', desc: '판별' },
+                    { file: 'P19_核心洞见.svg', title: '핵심 통찰', desc: '총정리' },
+                    { file: 'P20_感谢页.svg', title: '감사의 말', desc: '마무리' }
                 ]
             },
             {
                 id: 'ppt169_禅意风_金刚经第一品研究',
-                title: '金刚经第一品研究',
-                description: '金刚般若波罗蜜经法会因由分',
+                title: '금강경 제1품 연구',
+                description: '금강반야바라밀경 법회인유분',
                 icon: '🪷',
                 color: '#a78bfa',
                 folder: 'ppt169_禅意风_金刚经第一品研究/svg_final',
                 slides: [
-                    { file: 'P01_封面.svg', title: '封面', desc: '金刚经研究' },
-                    { file: 'P02_目录导航.svg', title: '目录导航', desc: '内容概览' },
-                    { file: 'P03_金刚经概述.svg', title: '金刚经概述', desc: '经典介绍' },
-                    { file: 'P04_第一品研究意义.svg', title: '第一品研究意义', desc: '研究价值' },
-                    { file: 'P05_场景与人物.svg', title: '场景与人物', desc: '背景' },
-                    { file: 'P06_佛陀日常行为.svg', title: '佛陀日常行为', desc: '威仪' },
-                    { file: 'P07_隐含的教法.svg', title: '隐含的教法', desc: '深意' },
-                    { file: 'P08_序幕功能.svg', title: '序幕功能', desc: '结构分析' },
-                    { file: 'P09_道在平常.svg', title: '道在平常', desc: '禅意' },
-                    { file: 'P10_译本比较.svg', title: '译本比较', desc: '版本对比' },
-                    { file: 'P11_注疏流变.svg', title: '注疏流变', desc: '历史演变' },
-                    { file: 'P12_禅宗视角.svg', title: '禅宗视角', desc: '禅解' },
-                    { file: 'P13_研究发现.svg', title: '研究发现', desc: '洞见' },
-                    { file: 'P14_深层启示.svg', title: '深层启示', desc: '启发' },
-                    { file: 'P15_结语.svg', title: '结语', desc: '结束' }
+                    { file: 'P01_封面.svg', title: '표지', desc: '금강경 연구' },
+                    { file: 'P02_目录导航.svg', title: '목차 내비게이션', desc: '내용 개요' },
+                    { file: 'P03_金刚经概述.svg', title: '금강경 개요', desc: '경전 소개' },
+                    { file: 'P04_第一品研究意义.svg', title: '제1품 연구 의의', desc: '연구 가치' },
+                    { file: 'P05_场景与人物.svg', title: '배경과 인물', desc: '배경' },
+                    { file: 'P06_佛陀日常行为.svg', title: '부처님의 일상 행동', desc: '위의' },
+                    { file: 'P07_隐含的教法.svg', title: '숨겨진 가르침', desc: '심오한 뜻' },
+                    { file: 'P08_序幕功能.svg', title: '서막의 기능', desc: '구조 분석' },
+                    { file: 'P09_道在平常.svg', title: '도는 일상 속에', desc: '선의' },
+                    { file: 'P10_译本比较.svg', title: '번역본 비교', desc: '판본 비교' },
+                    { file: 'P11_注疏流变.svg', title: '주소의 변천', desc: '역사적 전개' },
+                    { file: 'P12_禅宗视角.svg', title: '선종의 관점', desc: '선해' },
+                    { file: 'P13_研究发现.svg', title: '연구 결과', desc: '통찰' },
+                    { file: 'P14_深层启示.svg', title: '심층 시사점', desc: '시사점' },
+                    { file: 'P15_结语.svg', title: '맺음말', desc: '마무리' }
                 ]
             },
             {
                 id: 'ppt169_像素风_git_introduction',
-                title: 'Git 入门介绍',
-                description: '像素风格的 Git 版本控制入门',
+                title: 'Git 입문 소개',
+                description: '픽셀 아트 스타일의 Git 버전 관리 입문',
                 icon: '👾',
                 color: '#22c55e',
                 folder: 'ppt169_像素风_git_introduction/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: 'Git入门' },
-                    { file: 'slide_02_navigation.svg', title: '导航', desc: '目录' },
-                    { file: 'slide_03_what_is_git.svg', title: '什么是Git', desc: '定义' },
-                    { file: 'slide_04_vcs_features.svg', title: 'VCS特性', desc: '版本控制' },
-                    { file: 'slide_05_save_point.svg', title: '存档点', desc: '快照' },
-                    { file: 'slide_06_version_hell.svg', title: '版本地狱', desc: '问题' },
-                    { file: 'slide_07_workflow.svg', title: '工作流程', desc: '流程' },
-                    { file: 'slide_08_history.svg', title: '历史', desc: 'Git历史' },
-                    { file: 'slide_09_git_vs_github.svg', title: 'Git vs GitHub', desc: '对比' },
-                    { file: 'slide_10_summary.svg', title: '总结', desc: '结束' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: 'Git 입문' },
+                    { file: 'slide_02_navigation.svg', title: '내비게이션', desc: '목차' },
+                    { file: 'slide_03_what_is_git.svg', title: 'Git 이란', desc: '정의' },
+                    { file: 'slide_04_vcs_features.svg', title: 'VCS 특징', desc: '버전 관리' },
+                    { file: 'slide_05_save_point.svg', title: '세이브 포인트', desc: '스냅샷' },
+                    { file: 'slide_06_version_hell.svg', title: '버전 지옥', desc: '문제' },
+                    { file: 'slide_07_workflow.svg', title: '워크플로', desc: '흐름' },
+                    { file: 'slide_08_history.svg', title: '역사', desc: 'Git 역사' },
+                    { file: 'slide_09_git_vs_github.svg', title: 'Git vs GitHub', desc: '비교' },
+                    { file: 'slide_10_summary.svg', title: '총정리', desc: '마무리' }
                 ]
             },
             {
                 id: 'ppt169_谷歌风_google_annual_report',
-                title: 'Google 年度报告',
-                description: '谷歌风格年度报告模板',
+                title: 'Google 연간 보고서',
+                description: '구글 스타일 연간 보고 템플릿',
                 icon: '🔍',
                 color: '#4285f4',
                 folder: 'ppt169_谷歌风_google_annual_report/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '年度报告' },
-                    { file: 'slide_02_year_overview.svg', title: '年度概览', desc: '总览' },
-                    { file: 'slide_03_projects_summary.svg', title: '项目汇总', desc: '项目' },
-                    { file: 'slide_04_project_smart_scheduler.svg', title: '智能调度器', desc: '核心项目' },
-                    { file: 'slide_05_projects_other.svg', title: '其他项目', desc: '项目列表' },
-                    { file: 'slide_06_technical_growth.svg', title: '技术成长', desc: '技术' },
-                    { file: 'slide_07_team_collaboration.svg', title: '团队协作', desc: '协作' },
-                    { file: 'slide_08_impact_dashboard.svg', title: '影响仪表盘', desc: '成果' },
-                    { file: 'slide_09_future_plans.svg', title: '未来计划', desc: '规划' },
-                    { file: 'slide_10_thanks.svg', title: '感谢', desc: '结束' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '연간 보고' },
+                    { file: 'slide_02_year_overview.svg', title: '연간 개요', desc: '총람' },
+                    { file: 'slide_03_projects_summary.svg', title: '프로젝트 요약', desc: '프로젝트' },
+                    { file: 'slide_04_project_smart_scheduler.svg', title: '스마트 스케줄러', desc: '핵심 프로젝트' },
+                    { file: 'slide_05_projects_other.svg', title: '기타 프로젝트', desc: '프로젝트 목록' },
+                    { file: 'slide_06_technical_growth.svg', title: '기술 성장', desc: '기술' },
+                    { file: 'slide_07_team_collaboration.svg', title: '팀 협업', desc: '협업' },
+                    { file: 'slide_08_impact_dashboard.svg', title: '임팩트 대시보드', desc: '성과' },
+                    { file: 'slide_09_future_plans.svg', title: '향후 계획', desc: '로드맵' },
+                    { file: 'slide_10_thanks.svg', title: '감사', desc: '마무리' }
                 ]
             },
             {
                 id: 'ppt169_通用灵活+代码_debug六步法',
-                title: 'Debug 六步法',
-                description: '代码调试的系统方法论',
+                title: '디버그 6단계 기법',
+                description: '코드 디버깅의 체계적 방법론',
                 icon: '🐛',
                 color: '#ef4444',
                 folder: 'ppt169_通用灵活+代码_debug六步法/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '调试方法' },
-                    { file: 'slide_02_core_concept.svg', title: '核心概念', desc: '概述' },
-                    { file: 'slide_03_step1_clarify_flow.svg', title: '第一步：理清流程', desc: '流程分析' },
-                    { file: 'slide_04_step2_locate_bug.svg', title: '第二步：定位Bug', desc: '定位问题' },
-                    { file: 'slide_05_step3_elimination.svg', title: '第三步：排除法', desc: '排除' },
-                    { file: 'slide_06_step4_verify.svg', title: '第四步：验证', desc: '验证修复' },
-                    { file: 'slide_07_step5_side_effects.svg', title: '第五步：副作用', desc: '检查影响' },
-                    { file: 'slide_08_step6_test_document.svg', title: '第六步：测试文档', desc: '记录' },
-                    { file: 'slide_09_summary.svg', title: '总结', desc: '回顾' },
-                    { file: 'slide_10_end.svg', title: '结束', desc: '结束页' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '디버깅 기법' },
+                    { file: 'slide_02_core_concept.svg', title: '핵심 개념', desc: '개요' },
+                    { file: 'slide_03_step1_clarify_flow.svg', title: '1단계: 흐름 정리', desc: '흐름 분석' },
+                    { file: 'slide_04_step2_locate_bug.svg', title: '2단계: 버그 위치 파악', desc: '문제 위치' },
+                    { file: 'slide_05_step3_elimination.svg', title: '3단계: 배제법', desc: '배제' },
+                    { file: 'slide_06_step4_verify.svg', title: '4단계: 검증', desc: '수정 검증' },
+                    { file: 'slide_07_step5_side_effects.svg', title: '5단계: 부작용', desc: '영향 점검' },
+                    { file: 'slide_08_step6_test_document.svg', title: '6단계: 테스트·문서화', desc: '기록' },
+                    { file: 'slide_09_summary.svg', title: '총정리', desc: '회고' },
+                    { file: 'slide_10_end.svg', title: '마무리', desc: '마지막 페이지' }
                 ]
             },
             {
                 id: 'ppt169_通用灵活+学术_重庆大学论文格式标准',
-                title: '重庆大学论文格式标准',
-                description: '学术论文格式规范指南',
+                title: '충칭대학교 논문 형식 표준',
+                description: '학술 논문 형식 규범 가이드',
                 icon: '📝',
                 color: '#0891b2',
                 folder: 'ppt169_通用灵活+学术_重庆大学论文格式标准/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '论文格式' },
-                    { file: 'slide_02_contents.svg', title: '目录', desc: '内容概览' },
-                    { file: 'slide_03_structure.svg', title: '结构', desc: '论文结构' },
-                    { file: 'slide_04_front_matter.svg', title: '前置部分', desc: '封面摘要' },
-                    { file: 'slide_05_abstract.svg', title: '摘要', desc: '摘要规范' },
-                    { file: 'slide_06_main_body.svg', title: '正文', desc: '正文格式' },
-                    { file: 'slide_07_figures_tables.svg', title: '图表', desc: '图表规范' },
-                    { file: 'slide_08_references.svg', title: '参考文献', desc: '引用格式' },
-                    { file: 'slide_09_appendix.svg', title: '附录', desc: '附录格式' },
-                    { file: 'slide_10_layout.svg', title: '排版', desc: '版面要求' },
-                    { file: 'slide_11_checklist.svg', title: '检查清单', desc: '提交检查' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '논문 형식' },
+                    { file: 'slide_02_contents.svg', title: '목차', desc: '내용 개요' },
+                    { file: 'slide_03_structure.svg', title: '구조', desc: '논문 구조' },
+                    { file: 'slide_04_front_matter.svg', title: '앞부분', desc: '표지·초록' },
+                    { file: 'slide_05_abstract.svg', title: '초록', desc: '초록 규정' },
+                    { file: 'slide_06_main_body.svg', title: '본문', desc: '본문 형식' },
+                    { file: 'slide_07_figures_tables.svg', title: '도표', desc: '도표 규정' },
+                    { file: 'slide_08_references.svg', title: '참고 문헌', desc: '인용 형식' },
+                    { file: 'slide_09_appendix.svg', title: '부록', desc: '부록 형식' },
+                    { file: 'slide_10_layout.svg', title: '레이아웃', desc: '판면 요건' },
+                    { file: 'slide_11_checklist.svg', title: '체크리스트', desc: '제출 점검' }
                 ]
             },
             {
                 id: 'ppt169_通过灵活+代码_三大AI编程神器横向对比',
-                title: '三大AI编程神器对比',
-                description: 'AI编程工具横向对比分析',
+                title: '3 대 AI 코딩 도구 비교',
+                description: 'AI 코딩 도구 횡단 비교 분석',
                 icon: '⚡',
                 color: '#7c3aed',
                 folder: 'ppt169_通过灵活+代码_三大AI编程神器横向对比/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: 'AI工具对比' },
-                    { file: 'slide_02_positioning.svg', title: '定位', desc: '工具定位' },
-                    { file: 'slide_03_speckit.svg', title: 'Speckit', desc: '工具介绍' },
-                    { file: 'slide_04_openspec.svg', title: 'OpenSpec', desc: '工具介绍' },
-                    { file: 'slide_05_zcf.svg', title: 'ZCF', desc: '工具介绍' },
-                    { file: 'slide_06_comparison.svg', title: '对比', desc: '横向对比' },
-                    { file: 'slide_07_efficiency.svg', title: '效率', desc: '效率分析' },
-                    { file: 'slide_08_combination.svg', title: '组合使用', desc: '最佳实践' },
-                    { file: 'slide_09_decision.svg', title: '决策', desc: '选择建议' },
-                    { file: 'slide_10_table.svg', title: '对比表', desc: '汇总表' },
-                    { file: 'slide_11_summary.svg', title: '总结', desc: '结束' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: 'AI 도구 비교' },
+                    { file: 'slide_02_positioning.svg', title: '포지셔닝', desc: '도구 포지셔닝' },
+                    { file: 'slide_03_speckit.svg', title: 'Speckit', desc: '도구 소개' },
+                    { file: 'slide_04_openspec.svg', title: 'OpenSpec', desc: '도구 소개' },
+                    { file: 'slide_05_zcf.svg', title: 'ZCF', desc: '도구 소개' },
+                    { file: 'slide_06_comparison.svg', title: '비교', desc: '횡단 비교' },
+                    { file: 'slide_07_efficiency.svg', title: '효율', desc: '효율 분석' },
+                    { file: 'slide_08_combination.svg', title: '조합 사용', desc: '베스트 프랙티스' },
+                    { file: 'slide_09_decision.svg', title: '의사결정', desc: '선택 가이드' },
+                    { file: 'slide_10_table.svg', title: '비교표', desc: '요약표' },
+                    { file: 'slide_11_summary.svg', title: '총정리', desc: '마무리' }
                 ]
             },
             {
                 id: 'demo_project_intro_ppt169_20251211',
-                title: 'PPT Master 项目介绍',
-                description: '项目演示与功能介绍',
+                title: 'PPT Master 프로젝트 소개',
+                description: '프로젝트 시연 및 기능 소개',
                 icon: '🎯',
                 color: '#f97316',
                 folder: 'demo_project_intro_ppt169_20251211/svg_final',
                 slides: [
-                    { file: 'slide_01_cover.svg', title: '封面', desc: '项目介绍' },
-                    { file: 'slide_02_pain_points.svg', title: '痛点', desc: '问题背景' },
-                    { file: 'slide_03_solution.svg', title: '解决方案', desc: '方案介绍' },
-                    { file: 'slide_04_architecture.svg', title: '架构', desc: '系统架构' },
-                    { file: 'slide_05_roles.svg', title: '角色', desc: 'AI角色' },
-                    { file: 'slide_06_features.svg', title: '功能', desc: '核心功能' },
-                    { file: 'slide_07_formats.svg', title: '格式', desc: '支持格式' },
-                    { file: 'slide_08_tools.svg', title: '工具', desc: '配套工具' },
-                    { file: 'slide_09_quickstart.svg', title: '快速开始', desc: '入门指南' },
-                    { file: 'slide_10_cta.svg', title: '行动号召', desc: '结束' }
+                    { file: 'slide_01_cover.svg', title: '표지', desc: '프로젝트 소개' },
+                    { file: 'slide_02_pain_points.svg', title: '페인 포인트', desc: '문제 배경' },
+                    { file: 'slide_03_solution.svg', title: '솔루션', desc: '솔루션 소개' },
+                    { file: 'slide_04_architecture.svg', title: '아키텍처', desc: '시스템 아키텍처' },
+                    { file: 'slide_05_roles.svg', title: '역할', desc: 'AI 역할' },
+                    { file: 'slide_06_features.svg', title: '기능', desc: '핵심 기능' },
+                    { file: 'slide_07_formats.svg', title: '형식', desc: '지원 형식' },
+                    { file: 'slide_08_tools.svg', title: '툴', desc: '부가 툴' },
+                    { file: 'slide_09_quickstart.svg', title: '빠른 시작', desc: '시작 가이드' },
+                    { file: 'slide_10_cta.svg', title: '콜 투 액션', desc: '마무리' }
                 ]
             }
         ];
@@ -866,7 +866,7 @@
                         </div>
                         <div class="absolute bottom-4 right-4 px-3 py-1 rounded-full text-xs font-medium text-white"
                              style="background: ${collection.color}">
-                            ${collection.slides.length} slides
+                            ${collection.slides.length} 슬라이드
                         </div>
                     </div>
                     <div class="p-5">
@@ -888,7 +888,7 @@
                     <span class="text-2xl mr-3">${collection.icon}</span>
                     <div class="flex-1 min-w-0">
                         <p class="font-medium text-gray-800 truncate">${collection.title}</p>
-                        <p class="text-xs text-gray-500">${collection.slides.length} slides</p>
+                        <p class="text-xs text-gray-500">${collection.slides.length} 슬라이드</p>
                     </div>
                     ${currentCollection?.id === collection.id ? '<i class="fas fa-check text-brand-500"></i>' : ''}
                 </div>

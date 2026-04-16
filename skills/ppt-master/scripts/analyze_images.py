@@ -20,6 +20,16 @@ import os
 import sys
 from pathlib import Path
 
+_SCRIPT_DIR = Path(__file__).resolve().parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+
+try:
+    from i18n import t
+except ImportError:
+    def t(key, **kwargs):  # type: ignore
+        return key
+
 try:
     from PIL import Image
 except ImportError:
@@ -326,16 +336,16 @@ def save_csv(results: list[ImageAnalysis], csv_path: str) -> None:
 def main() -> None:
     """Run the CLI entry point."""
     parser = argparse.ArgumentParser(
-        description="Analyze image sizes and compute PPT layout dimensions"
+        description=t("cli.analyze_images.description")
     )
     parser.add_argument(
         "images_dir",
-        help="Path to the images directory"
+        help=t("cli.analyze_images.arg_dir")
     )
     parser.add_argument(
         "--canvas",
         default="ppt169",
-        help=f"Canvas format key (default: ppt169). Available: {', '.join(sorted(CANVAS_FORMATS.keys()))}"
+        help=t("cli.analyze_images.arg_format", formats=', '.join(sorted(CANVAS_FORMATS.keys())))
     )
 
     args = parser.parse_args()

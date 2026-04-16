@@ -43,5 +43,39 @@
     "strategist_complete": "Strategist Phase Complete",
     "image_gen_complete": "Image_Generator Phase Complete",
     "executor_complete": "Executor Phase Complete"
+  },
+  "cli": {
+    "analyze_images": {
+      "description": "Analyze image sizes and compute PPT layout dimensions",
+      "arg_dir": "Path to the images directory",
+      "arg_format": "Canvas format key (default: ppt169). Available: {formats}"
+    },
+    "finalize_svg": {
+      "description": "PPT Master - SVG Post-processing Tool",
+      "arg_project_dir": "Project directory path",
+      "arg_only": "Execute only specified processing steps (default: all)",
+      "arg_dry_run": "Preview only, do not execute",
+      "arg_quiet": "Quiet mode, reduce output",
+      "arg_compress": "Compress images before embedding (JPEG quality=85, PNG optimize)",
+      "arg_max_dimension": "Downscale images exceeding this dimension on either axis (e.g., 2560)"
+    },
+    "total_md_split": {
+      "description": "PPT Master - Speaker Notes Splitting Tool",
+      "arg_project_path": "Project directory path",
+      "arg_output": "Output directory path (default: notes directory under project)",
+      "arg_quiet": "Quiet mode"
+    },
+    "image_gen": {
+      "description": "Generate images using AI image model providers.",
+      "arg_prompt": "The text prompt for image generation.",
+      "arg_negative_prompt": "Negative prompt to specify what to avoid.",
+      "arg_aspect_ratio": "Aspect ratio. Default: 1:1.",
+      "arg_image_size": "Image size. Choices: {sizes}. Default: 1K. (case-insensitive)",
+      "arg_output": "Output directory. Default: current directory.",
+      "arg_filename": "Output filename (without extension). Overrides auto-naming.",
+      "arg_model": "Model name. Default depends on backend.",
+      "arg_backend": "Override IMAGE_BACKEND env var.",
+      "arg_list_backends": "List available backends grouped by support tier and exit."
+    }
   }
 }
