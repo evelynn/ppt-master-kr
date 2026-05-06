@@ -6,10 +6,19 @@ Usage:
     python3 scripts/project_manager.py import-sources <project_path> <source1> [<source2> ...] [--move | --copy]
     python3 scripts/project_manager.py validate <project_path>
     python3 scripts/project_manager.py info <project_path>
+
+DESIGN.md / editor / regeneration entry points (delegate to dedicated scripts):
+    python3 scripts/project_manager.py edit <project_path> [--port 5051]
+    python3 scripts/project_manager.py regenerate <project_path> --slides ID,ID,...
+    python3 scripts/project_manager.py regenerate <project_path> --sections ID,ID,...
+    python3 scripts/project_manager.py regenerate <project_path> --theme
+    python3 scripts/project_manager.py regenerate <project_path> --reorganize
+    python3 scripts/project_manager.py import-template <pptx> --name <slug>
 """
 
 from __future__ import annotations
 
+import os
 import re
 import shutil
 import subprocess
@@ -702,6 +711,18 @@ def main() -> None:
                 print("\n" + t("project.invalid"))
                 sys.exit(1)
             return
+
+        if command in ("edit", "regenerate", "import-template"):
+            # Delegate to dedicated entry-point scripts. This keeps
+            # project_manager.py thin and lets each tool own its arg parsing.
+            here = Path(__file__).parent
+            mapping = {
+                "edit": here / "edit_server.py",
+                "regenerate": here / "slide_regenerator.py",
+                "import-template": here / "pptx_to_template.py",
+            }
+            target = mapping[command]
+            os.execvp("python3", ["python3", str(target), *sys.argv[2:]])
 
         if command == "info":
             if len(sys.argv) < 3:

@@ -90,3 +90,9 @@ curl_cffi>=0.7.0
 google-genai>=1.0.0
 # OpenAI-compatible backend / OpenAI 兼容后端 (IMAGE_BACKEND=openai)
 openai>=1.0.0
+
+# ─────────────────────────────────────────────────────────────
+# DESIGN.md token system / outline.yaml management
+# scripts/design_tokens.py · outline_manager.py · slide_regenerator.py · edit_server.py
+# ─────────────────────────────────────────────────────────────
+PyYAML>=6.0

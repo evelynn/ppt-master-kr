@@ -42,6 +42,55 @@
 - [ ] 다음: Step 7 후처리로 자동 진행
 ```
 
+## DESIGN.md 토큰과 컴포넌트 라이브러리 (DESIGN.md가 있을 때)
+
+프로젝트 템플릿이 `DESIGN.md` (영문 사양 `references/design-md-spec.md`,
+한국어 설명 `references/ko/design-md-spec.md`)를 가질 때, Executor는 hex
+값을 직접 박지 않고 **디자인 토큰을 참조하는 SVG**를 생성해야 한다.
+후처리 파이프라인이 finalize 단계에서 컴포넌트를 임베드하고 토큰을 해석한다.
+
+### 토큰 참조 문법 (SVG 속성값)
+
+| 토큰 | 용도 |
+| ---- | ---- |
+| `{colors.<name>}` | 색 (예: `fill="{colors.brand-1}"`) |
+| `{typography.<name>.size}` | 폰트 크기 px |
+| `{typography.<name>.weight}` | 폰트 굵기 |
+| `{rounded.<name>}` | rx/ry 값 (예: `rx="{rounded.hero}"`) |
+| `{spacing.<name>}` | 스페이싱 px |
+| `{font.heading}` / `{font.body}` / `{font.code}` | font-family 스택 |
+
+### 컴포넌트 임베드
+
+`templates/components/`의 카드/뱃지/콜아웃을 재사용하려면 아이콘 임베드와
+같은 `<use>` 패턴을 쓴다:
+
+```xml
+<use data-component="product-cards/coral"
+     data-title="M2.7"
+     data-subtitle="기초 모델"
+     data-footer="200B · +18%"
+     x="80" y="120" width="480" height="400"/>
+```
+
+후처리기가 컴포넌트 SVG 그룹으로 치환하고, 박스에 맞춰 스케일하며,
+`data-<slot>` 값으로 슬롯 텍스트를 채운다. 사용 가능한 컴포넌트와 슬롯
+목록은 `templates/components/components_index.json`에 있다.
+
+### Do / Don't
+
+매 프로젝트의 DESIGN.md `## Do's and Don'ts` 섹션을 먼저 읽는다. 공통:
+
+- **Do**: 색은 `{colors.<token>}`로 참조 (hex 직접 사용 금지)
+- **Do**: 한 역할에 한 사이즈 (커버 = `hero-display`, 슬라이드 제목 = `heading-lg`)
+- **Do**: 카드/뱃지는 `<use data-component="...">`로 삽입
+- **Don't**: 팔레트 외 색 도입 금지
+- **Don't**: `<g opacity>` 금지 (PPT 호환성)
+- **Don't**: `class=` 또는 `<style>` 금지 (SVG 제약)
+
+차트 시리즈처럼 일회성 hex가 꼭 필요할 때만 슬라이드 상단에
+`<!-- design-md:freehex -->` 주석을 두면 린터가 제외한다.
+
 ## SVG 기술 제약
 
 SVG 기술 제약(금지 요소, 조건부 허용 규칙)은 **원본 영문 문서(`references/shared-standards.md`)의 사양을 정확히 따릅니다**.

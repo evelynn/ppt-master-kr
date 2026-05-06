@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" data-component="cards/feature">
+  <rect x="0" y="0" width="360" height="280" rx="{rounded.lg}" ry="{rounded.lg}" fill="{colors.surface-1}" stroke="{colors.surface-2}" stroke-width="1"/>
+  <rect x="24" y="24" width="56" height="4" rx="2" ry="2" fill="{colors.brand-1}"/>
+  <text x="24" y="76" font-family="{font.heading}" font-size="{typography.heading-md.size}" font-weight="{typography.heading-md.weight}" fill="{colors.ink}">{{text.title}}</text>
+  <text x="24" y="120" font-family="{font.body}" font-size="{typography.body-lg.size}" fill="{colors.ink-muted}">{{text.subtitle}}</text>
+  <text x="24" y="172" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink}">{{text.body1}}</text>
+  <text x="24" y="208" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink}">{{text.body2}}</text>
+  <text x="24" y="244" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink}">{{text.body3}}</text>
+</svg>

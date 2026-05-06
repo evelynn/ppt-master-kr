@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="{colors.primary}"/>
+  <text x="640" y="320" text-anchor="middle" font-family="{font.heading}" font-size="{typography.hero-display.size}" font-weight="{typography.hero-display.weight}" fill="{colors.ink-inverse}">감사합니다</text>
+  <use data-component="decorations/accent-bar" x="580" y="380" width="120" height="8"/>
+  <text x="640" y="460" text-anchor="middle" font-family="{font.body}" font-size="{typography.heading-md.size}" font-weight="500" fill="{colors.ink-inverse}" fill-opacity="0.85">Questions &amp; Discussion</text>
+  <text x="640" y="660" text-anchor="middle" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink-inverse}" fill-opacity="0.65">2026 Q2 · MiniMax Product Office</text>
+</svg>

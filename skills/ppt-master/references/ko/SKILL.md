@@ -233,6 +233,23 @@ python3 ${SKILL_DIR}/scripts/svg_to_pptx.py <project_path> -s final
 | 캔버스 포맷 사양 | `references/canvas-formats.md` |
 | 이미지 레이아웃 사양 | `references/image-layout-spec.md` |
 | SVG 이미지 임베딩 | `references/svg-image-embedding.md` |
+| **DESIGN.md 사양 (한국어)** | `references/ko/design-md-spec.md` |
+| **컴포넌트 인덱스** | `templates/components/components_index.json` |
+
+## DESIGN.md 토큰 시스템 도구
+
+| 용도 | 명령 |
+| ---- | ---- |
+| DESIGN.md 검증 | `python3 scripts/design_tokens.py validate <DESIGN.md>` |
+| 토큰 해석 | `python3 scripts/design_tokens.py resolve <text> --design <DESIGN.md>` |
+| SVG 팔레트 린트 | `python3 scripts/design_tokens.py lint-svg <slide.svg> --design <DESIGN.md>` |
+| outline.yaml 생성 | `python3 scripts/outline_manager.py generate <project>` |
+| **편집 UI 실행** | `python3 scripts/project_manager.py edit <project>` (브라우저 자동 오픈) |
+| **재생성 (4단위)** | `python3 scripts/project_manager.py regenerate <project> --slides ID,ID` |
+|  | `... --sections ID` |
+|  | `... --theme` (LLM 호출 없이 토큰만 재해석) |
+|  | `... --reorganize` (목차 변경 반영) |
+| 샘플 PPTX → 템플릿 | `python3 scripts/project_manager.py import-template <pptx> --name <slug>` |
 
 ---
 

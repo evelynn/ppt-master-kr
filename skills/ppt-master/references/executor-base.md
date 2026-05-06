@@ -232,6 +232,60 @@ Automatically split `notes/total.md` into individual speaker note files in the `
 
 ---
 
+## 8.5 DESIGN.md Tokens and Component Library (when DESIGN.md is present)
+
+When the project's template ships a `DESIGN.md` (see
+[design-md-spec.md](design-md-spec.md)), the Executor MUST emit SVGs that
+**reference design tokens** instead of hard-coding hex / size / radius values.
+The post-processing pipeline embeds components and resolves tokens at
+finalize time.
+
+### Token reference syntax (in SVG attribute values)
+
+| Token shape | Use |
+| ----------- | --- |
+| `{colors.<name>}` | hex color (e.g. `fill="{colors.brand-1}"`) |
+| `{typography.<name>.size}` | font-size in px (e.g. `font-size="{typography.heading-lg.size}"`) |
+| `{typography.<name>.weight}` | font-weight |
+| `{rounded.<name>}` | rx/ry value (e.g. `rx="{rounded.hero}"`) |
+| `{spacing.<name>}` | spacing px |
+| `{font.heading}` / `{font.body}` / `{font.code}` | font-family stack |
+
+### Component embedding
+
+To reuse a card / badge / callout from `templates/components/`, write a `<use>`
+element matching the icon embedding convention:
+
+```xml
+<use data-component="product-cards/coral"
+     data-title="M2.7"
+     data-subtitle="기초 모델"
+     data-footer="200B · +18%"
+     x="80" y="120" width="480" height="400"/>
+```
+
+The post-processor replaces it with the component's SVG group, scales it to
+the requested box, fills slot text from each `data-<slot>` attribute, and
+resolves the component's internal tokens. Available components are listed in
+`templates/components/components_index.json`; the slot list per component is
+in the index.
+
+### Do's and Don'ts
+
+Always read the `## Do's and Don'ts` section of the project's DESIGN.md before
+emitting slides. Common rules carried by all PPT Master DESIGN.md files:
+
+- **Do** reference colors via `{colors.<token>}`, not raw hex codes.
+- **Do** use one type-size per role (cover = `hero-display`, slide title = `heading-lg`, etc.).
+- **Do** embed product tiles via `<use data-component="...">`.
+- **Don't** introduce a new color outside the palette.
+- **Don't** apply `<g opacity>` (banned by PPT compatibility).
+- **Don't** use `class=` or `<style>` (banned by SVG constraints).
+
+If you do need a one-off literal hex (e.g. for a chart series outside the
+palette), add `<!-- design-md:freehex -->` near the top of the slide so the
+linter skips it.
+
 ## 9. Next Steps After Completion
 
 > **Auto-continuation**: After Visual Construction Phase (all SVG pages) and Logic Construction Phase (all notes) are complete, the Executor proceeds directly to the post-processing pipeline.
