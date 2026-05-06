@@ -48,6 +48,16 @@ python3 skills/ppt-master/scripts/project_manager.py init <project_name> --forma
 python3 skills/ppt-master/scripts/project_manager.py import-sources <project_path> <source_files_or_URLs...> --move
 python3 skills/ppt-master/scripts/project_manager.py validate <project_path>
 
+# DESIGN.md tokens, components, editor UI, 4-unit regeneration
+python3 skills/ppt-master/scripts/design_tokens.py validate <DESIGN.md>
+python3 skills/ppt-master/scripts/outline_manager.py generate <project_path>
+python3 skills/ppt-master/scripts/project_manager.py edit <project_path>     # opens local editor on :5051
+python3 skills/ppt-master/scripts/project_manager.py regenerate <project_path> --slides ID,ID
+python3 skills/ppt-master/scripts/project_manager.py regenerate <project_path> --sections ID
+python3 skills/ppt-master/scripts/project_manager.py regenerate <project_path> --theme
+python3 skills/ppt-master/scripts/project_manager.py regenerate <project_path> --reorganize
+python3 skills/ppt-master/scripts/project_manager.py import-template <sample.pptx> --name <slug>
+
 # Image tools
 python3 skills/ppt-master/scripts/analyze_images.py <project_path>/images
 python3 skills/ppt-master/scripts/image_gen.py "prompt" --aspect_ratio 16:9 --image_size 1K -o <project_path>/images

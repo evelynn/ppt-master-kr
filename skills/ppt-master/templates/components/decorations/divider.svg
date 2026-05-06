@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 1" data-component="decorations/divider">
+  <line x1="0" y1="0.5" x2="200" y2="0.5" stroke="{colors.surface-2}" stroke-width="1"/>
+</svg>

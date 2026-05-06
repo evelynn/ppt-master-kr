@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total": 21,
+    "total": 22,
     "defaultViewBox": "0 0 1280 720",
     "formats": ["ppt169"],
     "standardFiles": ["design_spec.md", "01_cover.svg", "02_toc.svg", "02_chapter.svg", "03_content.svg", "04_ending.svg"],
@@ -26,7 +26,7 @@
     },
     "special": {
       "label": "Special Style Templates",
-      "layouts": ["pixel_retro"]
+      "layouts": ["pixel_retro", "minimax_demo"]
     }
   },
   "quickLookup": {
@@ -199,6 +199,13 @@
       "themeMode": "Academic blue primary + mountain-city layered imagery",
       "assets": ["重庆大学logo.png", "重庆大学logo2.png"],
       "keywords": ["Chongqing University", "Academic", "Defense", "University"]
+    },
+    "minimax_demo": {
+      "label": "MiniMax Demo (DESIGN.md reference)",
+      "summary": "End-to-end reference template for the DESIGN.md token system and shared component library. Coral and electric blue product tiles on near-black canvas.",
+      "tone": "Bold dual-identity AI brand, conclusion-first",
+      "themeMode": "Hybrid theme (dark cover/ending + light content pages)",
+      "keywords": ["DESIGN.md", "Tokens", "Components", "Reference", "AI brand", "Demo"]
     }
   }
 }

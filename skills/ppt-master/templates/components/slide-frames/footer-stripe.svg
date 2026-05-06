@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 36" data-component="slide-frames/footer-stripe">
+  <line x1="60" y1="0" x2="1220" y2="0" stroke="{colors.surface-2}" stroke-width="1"/>
+  <text x="60" y="24" font-family="{font.body}" font-size="{typography.micro.size}" fill="{colors.ink-muted}">{{text.left}}</text>
+  <text x="640" y="24" text-anchor="middle" font-family="{font.body}" font-size="{typography.micro.size}" fill="{colors.ink-muted}">{{text.center}}</text>
+  <text x="1220" y="24" text-anchor="end" font-family="{font.body}" font-size="{typography.micro.size}" font-weight="500" fill="{colors.ink-muted}">{{text.right}}</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="{colors.canvas}"/>
+  <text x="80" y="100" font-family="{font.heading}" font-size="{typography.heading-lg.size}" font-weight="{typography.heading-lg.weight}" fill="{colors.ink}">제품군 개요</text>
+  <text x="80" y="148" font-family="{font.body}" font-size="{typography.heading-md.size}" font-weight="500" fill="{colors.ink-muted}">코어 라인업의 두 기둥</text>
+
+  <use data-component="product-cards/coral"
+       data-title="M2.7"
+       data-subtitle="기초 모델"
+       data-footer="200B · 한국어 +18%"
+       x="80" y="220" width="520" height="420"/>
+
+  <use data-component="badges/new"
+       data-text="NEW"
+       x="540" y="240" width="80" height="32"/>
+
+  <use data-component="product-cards/blue"
+       data-title="Hailuo"
+       data-subtitle="멀티모달 어시스턴트"
+       data-footer="텍스트 · 음성 · 영상 통합"
+       x="660" y="220" width="520" height="420"/>
+
+  <use data-component="slide-frames/footer-stripe"
+       data-left="MiniMax · Confidential"
+       data-center=""
+       data-right="03 / 04"
+       x="0" y="664" width="1280" height="36"/>
+</svg>

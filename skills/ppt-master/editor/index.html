@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PPT Master Editor</title>
+  <link rel="stylesheet" href="/editor/styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>PPT Master</strong>
+      <span class="muted" id="project-name">…</span>
+    </div>
+    <nav class="theme-panel" id="theme-panel">
+      <div class="muted">Loading theme…</div>
+    </nav>
+    <div class="actions">
+      <button id="btn-regen-slide" disabled>선택 슬라이드 재생성</button>
+      <button id="btn-regen-section" disabled>섹션 재생성</button>
+      <button id="btn-regen-theme">테마 적용</button>
+      <button id="btn-reorganize">목차 재구성 적용</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="section-block">
+        <h2>슬라이드</h2>
+        <ol class="slide-tree" id="slide-tree"></ol>
+        <button class="ghost" id="btn-add-slide">+ 새 슬라이드</button>
+      </div>
+      <div class="section-block">
+        <h2>섹션</h2>
+        <ul id="section-list"></ul>
+      </div>
+    </aside>
+
+    <section class="preview">
+      <div class="preview-frame" id="preview-frame">
+        <div class="empty">슬라이드를 선택하세요.</div>
+      </div>
+      <div class="preview-meta" id="preview-meta"></div>
+    </section>
+
+    <aside class="inspector">
+      <h2>슬라이드 세부</h2>
+      <form id="slide-form" class="form">
+        <label>ID <input name="id" readonly/></label>
+        <label>제목 <input name="title"/></label>
+        <label>부제 <input name="subtitle"/></label>
+        <label>슬라이드 템플릿 <input name="slide_template"/></label>
+        <label>섹션
+          <select name="section" id="select-section"></select>
+        </label>
+        <label>컴포넌트 (한 줄에 하나)
+          <textarea name="components" rows="5" placeholder="product-cards/coral?title=...&x=80&y=120&w=480&h=400"></textarea>
+        </label>
+        <label>본문 항목 (한 줄에 하나)
+          <textarea name="bullets" rows="5"></textarea>
+        </label>
+        <label>발표자 메모 <textarea name="notes" rows="4"></textarea></label>
+        <button type="submit">저장</button>
+        <span id="save-status" class="muted"></span>
+      </form>
+
+      <h2>컴포넌트 라이브러리</h2>
+      <div class="component-gallery" id="component-gallery"></div>
+    </aside>
+  </main>
+
+  <footer class="status" id="status">준비됨</footer>
+  <script src="/editor/app.js"></script>
+</body>
+</html>

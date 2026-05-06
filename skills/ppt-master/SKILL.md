@@ -85,6 +85,24 @@ For complete tool documentation, see `${SKILL_DIR}/scripts/README.md`.
 | Layout templates | `${SKILL_DIR}/templates/layouts/layouts_index.json` | Query available page layout templates |
 | Visualization templates | `${SKILL_DIR}/templates/charts/charts_index.json` | Query available visualization SVG templates (charts, infographics, diagrams, frameworks) |
 | Icon library | `${SKILL_DIR}/templates/icons/` | Search icons on demand: `ls templates/icons/<library>/ \| grep <keyword>` (libraries: `chunk/`, `tabler-filled/`, `tabler-outline/`) |
+| Component library | `${SKILL_DIR}/templates/components/components_index.json` | Reusable parameterized SVG components (cards, badges, callouts, slide frames). Embed via `<use data-component="category/name" .../>`. See `references/design-md-spec.md`. |
+
+## DESIGN.md System (token-driven design)
+
+When a layout template ships a `DESIGN.md` (e.g. `templates/layouts/minimax_demo/DESIGN.md`),
+slide SVGs reference design tokens (`{colors.brand-1}`, `{typography.heading-lg.size}`,
+`{rounded.hero}`) instead of hard-coding hex / px values. The post-processing pipeline
+embeds components and resolves tokens at finalize time.
+
+| File | Path | Purpose |
+| ---- | ---- | ------- |
+| Spec | `references/design-md-spec.md` (+ ko mirror) | Required sections, token syntax |
+| Boilerplate | `templates/DESIGN.template.md` | Starting point for new templates |
+| Tools | `scripts/design_tokens.py` | `validate` / `lint-svg` / `resolve` / `dump` |
+| Outline | `scripts/outline_manager.py` | `generate` / `validate` / `diff` / `renumber` / `touch` |
+| Editor | `scripts/edit_server.py` + `editor/` | Local editor UI on `127.0.0.1:5051` |
+| Regen | `scripts/slide_regenerator.py` | 4-unit regen: `--slides` / `--sections` / `--theme` / `--reorganize` |
+| Import | `scripts/pptx_to_template.py` | Sample PPTX → DESIGN.md + stub layout (v1 framework) |
 
 ## Standalone Workflows
 

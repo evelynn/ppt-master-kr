@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" data-component="cards/recommendation">
+  <rect x="0" y="0" width="360" height="240" rx="{rounded.lg}" ry="{rounded.lg}" fill="{colors.canvas}" stroke="{colors.surface-2}" stroke-width="1"/>
+  <text x="24" y="60" font-family="{font.heading}" font-size="{typography.heading-md.size}" font-weight="{typography.heading-md.weight}" fill="{colors.ink}">{{text.title}}</text>
+  <text x="24" y="100" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink-muted}">{{text.subtitle}}</text>
+  <line x1="24" y1="180" x2="336" y2="180" stroke="{colors.surface-2}" stroke-width="1"/>
+  <text x="24" y="210" font-family="{font.body}" font-size="{typography.micro.size}" font-weight="500" fill="{colors.brand-1}">{{text.tag}}</text>
+</svg>

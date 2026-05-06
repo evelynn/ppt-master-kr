@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="{colors.canvas}"/>
+  <text x="80" y="120" font-family="{font.heading}" font-size="{typography.heading-lg.size}" font-weight="{typography.heading-lg.weight}" fill="{colors.ink}">목차</text>
+  <use data-component="decorations/accent-bar" x="80" y="148" width="120" height="8"/>
+
+  <use data-component="callouts/number-circle" data-number="1" x="80" y="220" width="64" height="64"/>
+  <text x="170" y="252" font-family="{font.heading}" font-size="{typography.heading-md.size}" font-weight="{typography.heading-md.weight}" fill="{colors.ink}">제품군 개요</text>
+  <text x="170" y="282" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink-muted}">코어 제품 라인업과 포지셔닝</text>
+
+  <use data-component="callouts/number-circle" data-number="2" x="80" y="320" width="64" height="64"/>
+  <text x="170" y="352" font-family="{font.heading}" font-size="{typography.heading-md.size}" font-weight="{typography.heading-md.weight}" fill="{colors.ink}">분기 하이라이트</text>
+  <text x="170" y="382" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink-muted}">사용자 지표와 모델 개선 사항</text>
+
+  <use data-component="callouts/number-circle" data-number="3" x="80" y="420" width="64" height="64"/>
+  <text x="170" y="452" font-family="{font.heading}" font-size="{typography.heading-md.size}" font-weight="{typography.heading-md.weight}" fill="{colors.ink}">차분기 로드맵</text>
+  <text x="170" y="482" font-family="{font.body}" font-size="{typography.body-md.size}" fill="{colors.ink-muted}">출시 일정과 우선순위</text>
+
+  <use data-component="slide-frames/footer-stripe"
+       data-left="MiniMax · Confidential"
+       data-center=""
+       data-right="02 / 04"
+       x="0" y="664" width="1280" height="36"/>
+</svg>

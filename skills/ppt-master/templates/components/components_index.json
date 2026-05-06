@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "version": 1,
+    "updated": "2026-05-06",
+    "description": "Reusable parameterized SVG components referenced from slide SVGs via <use data-component=\"category/name\">. See references/component-guide.md."
+  },
+  "categories": {
+    "product-cards": {
+      "label": "Product Cards",
+      "description": "Bold colored tiles for product showcases. Title + subtitle + footer slots."
+    },
+    "cards": {
+      "label": "Content Cards",
+      "description": "Light-surface cards for features, recommendations, structured points."
+    },
+    "badges": {
+      "label": "Badges",
+      "description": "Small pill or chip overlays."
+    },
+    "decorations": {
+      "label": "Decorations",
+      "description": "Accent bars, dividers, separators."
+    },
+    "callouts": {
+      "label": "Callouts",
+      "description": "Step numbers, quotes, emphasis frames."
+    },
+    "slide-frames": {
+      "label": "Slide Frames",
+      "description": "Full-canvas or full-width slide-level decorations (cover band, footer stripe)."
+    }
+  },
+  "components": {
+    "product-cards/coral": {
+      "category": "product-cards",
+      "viewBox": "0 0 480 400",
+      "defaultWidth": 480,
+      "defaultHeight": 400,
+      "slots": ["title", "subtitle", "footer"],
+      "tokens": ["{colors.brand-1}", "{colors.ink-inverse}", "{rounded.hero}", "{typography.heading-xl}", "{typography.heading-md}", "{typography.body-md}"]
+    },
+    "product-cards/blue": {
+      "category": "product-cards",
+      "viewBox": "0 0 480 400",
+      "defaultWidth": 480,
+      "defaultHeight": 400,
+      "slots": ["title", "subtitle", "footer"],
+      "tokens": ["{colors.brand-2}", "{colors.ink-inverse}", "{rounded.hero}", "{typography.heading-xl}", "{typography.heading-md}", "{typography.body-md}"]
+    },
+    "cards/feature": {
+      "category": "cards",
+      "viewBox": "0 0 360 280",
+      "defaultWidth": 360,
+      "defaultHeight": 280,
+      "slots": ["title", "subtitle", "body1", "body2", "body3"],
+      "tokens": ["{colors.surface-1}", "{colors.surface-2}", "{colors.brand-1}", "{colors.ink}", "{colors.ink-muted}", "{rounded.lg}", "{typography.heading-md}", "{typography.body-lg}", "{typography.body-md}"]
+    },
+    "cards/recommendation": {
+      "category": "cards",
+      "viewBox": "0 0 360 240",
+      "defaultWidth": 360,
+      "defaultHeight": 240,
+      "slots": ["title", "subtitle", "tag"],
+      "tokens": ["{colors.canvas}", "{colors.surface-2}", "{colors.brand-1}", "{colors.ink}", "{colors.ink-muted}", "{rounded.lg}", "{typography.heading-md}", "{typography.body-md}", "{typography.micro}"]
+    },
+    "badges/new": {
+      "category": "badges",
+      "viewBox": "0 0 80 32",
+      "defaultWidth": 80,
+      "defaultHeight": 32,
+      "slots": ["text"],
+      "tokens": ["{colors.accent}", "{colors.ink}"]
+    },
+    "badges/code": {
+      "category": "badges",
+      "viewBox": "0 0 120 32",
+      "defaultWidth": 120,
+      "defaultHeight": 32,
+      "slots": ["text"],
+      "tokens": ["{colors.surface-1}", "{colors.surface-2}", "{colors.ink}", "{font.code}"]
+    },
+    "decorations/accent-bar": {
+      "category": "decorations",
+      "viewBox": "0 0 120 8",
+      "defaultWidth": 120,
+      "defaultHeight": 8,
+      "slots": [],
+      "tokens": ["{colors.brand-1}"]
+    },
+    "decorations/divider": {
+      "category": "decorations",
+      "viewBox": "0 0 200 1",
+      "defaultWidth": 200,
+      "defaultHeight": 1,
+      "slots": [],
+      "tokens": ["{colors.surface-2}"]
+    },
+    "callouts/number-circle": {
+      "category": "callouts",
+      "viewBox": "0 0 64 64",
+      "defaultWidth": 64,
+      "defaultHeight": 64,
+      "slots": ["number"],
+      "tokens": ["{colors.brand-1}", "{colors.ink-inverse}"]
+    },
+    "callouts/quote-frame": {
+      "category": "callouts",
+      "viewBox": "0 0 600 240",
+      "defaultWidth": 600,
+      "defaultHeight": 240,
+      "slots": ["quote", "attribution"],
+      "tokens": ["{colors.surface-1}", "{colors.brand-1}", "{colors.ink}", "{colors.ink-muted}", "{rounded.lg}", "{typography.heading-md}", "{typography.body-md}"]
+    },
+    "slide-frames/cover-band": {
+      "category": "slide-frames",
+      "viewBox": "0 0 1280 720",
+      "defaultWidth": 1280,
+      "defaultHeight": 720,
+      "slots": ["title", "subtitle", "meta"],
+      "tokens": ["{colors.primary}", "{colors.brand-1}", "{colors.ink-inverse}", "{typography.hero-display}", "{typography.heading-md}", "{typography.body-md}"]
+    },
+    "slide-frames/footer-stripe": {
+      "category": "slide-frames",
+      "viewBox": "0 0 1280 36",
+      "defaultWidth": 1280,
+      "defaultHeight": 36,
+      "slots": ["left", "center", "right"],
+      "tokens": ["{colors.surface-2}", "{colors.ink-muted}", "{typography.micro}"]
+    }
+  }
+}
